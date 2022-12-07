@@ -247,9 +247,9 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
-<<<<<<< HEAD
+
 --- !u!114 &343531801
-=======
+
 --- !u!1 &553307788
 GameObject:
   m_ObjectHideFlags: 0
@@ -328,20 +328,20 @@ CanvasRenderer:
   m_GameObject: {fileID: 553307788}
   m_CullTransparentMesh: 1
 --- !u!114 &553307792
->>>>>>> f0e3569c205c3607c9db7323316c262333e932f3
+
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< HEAD
+
   m_GameObject: {fileID: 343531798}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b01578e5b66f1dd42ab41cea5991e7ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-=======
+
   m_GameObject: {fileID: 553307788}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -349,7 +349,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pbValue: {fileID: 553307790}
->>>>>>> f0e3569c205c3607c9db7323316c262333e932f3
+
 --- !u!1 &696434427
 GameObject:
   m_ObjectHideFlags: 0

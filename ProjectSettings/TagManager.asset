@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Bottom
   - Top
+  - Item
+  - block
+  - Enemy
   layers:
   - Default
   - TransparentFX

@@ -9,6 +9,7 @@ TagManager:
   - Item
   - block
   - Enemy
+  - UpObj
   layers:
   - Default
   - TransparentFX

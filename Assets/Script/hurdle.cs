@@ -6,6 +6,8 @@ public class hurdle : MonoBehaviour
 {
     [Header("정체성")]
     public bool item;
+    public bool up_Obj;
+    public bool down_Obj;
     
     [Header("변수")]
     public int speed;

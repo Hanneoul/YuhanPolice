@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4187484880864279821}
   m_Layer: 0
   m_Name: game_block_down_1
-  m_TagString: Untagged
+  m_TagString: block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -124,4 +124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb5066f0fb5d4934e9422e1f39e67b35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  item: 0
+  up_Obj: 0
+  down_Obj: 1
   speed: 0

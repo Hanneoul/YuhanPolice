@@ -10,6 +10,7 @@ public class hurdle : MonoBehaviour
     public bool up_Obj;
     public bool down_Obj;
     public bool isStop;
+
     
     [Header("����")]
     public int speed;
@@ -28,7 +29,7 @@ public class hurdle : MonoBehaviour
         if(!isStop) {
             this.gameObject.transform.Translate(Vector2.left * speed * Time.deltaTime);
         }
-        if(GameManager._instance.isTouch) {
+        if(GameManager._instance.isTouch || GameManager._instance.isTimeout ) {
             Destroy(this.gameObject);
         }
 

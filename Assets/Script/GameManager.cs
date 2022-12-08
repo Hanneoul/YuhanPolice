@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     // 범인 등장
     public bool isEenmy;
     public bool isTouch;
+    public bool isTimeout;
     float times;
 
     public GameObject[] credits;
@@ -56,6 +57,7 @@ public class GameManager : MonoBehaviour
         scnces.SetActive(false);
         isEenmy = false;
         isTouch = false;
+        isTimeout = false;
         yield return 0;
     }
 

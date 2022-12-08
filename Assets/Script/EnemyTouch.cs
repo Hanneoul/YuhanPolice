@@ -25,6 +25,7 @@ public class EnemyTouch : MonoBehaviour, IPointerClickHandler
         frontImage.fillAmount = value / 5;
         if(frontImage.fillAmount == 1) {
             GameManager._instance.EnemyTouchTimeOver();
+            GameManager._instance.isTimeout = true;
             Destroy(this.gameObject);
         }
     }

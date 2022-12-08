@@ -10,6 +10,7 @@ TagManager:
   - block
   - Enemy
   - UpObj
+  - Delete
   layers:
   - Default
   - TransparentFX

@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class hurdle : MonoBehaviour
 {
-    [Header("Á¤Ã¼¼º")]
+    [Header("ï¿½ï¿½Ã¼ï¿½ï¿½")]
     public bool item;
     public bool up_Obj;
     public bool down_Obj;
     
-    [Header("º¯¼ö")]
+    [Header("ï¿½ï¿½ï¿½ï¿½")]
     public int speed;
     
     
@@ -31,6 +31,10 @@ public class hurdle : MonoBehaviour
             {
                 Destroy(this.gameObject);
             }
+        }
+
+        if(collision.CompareTag("Delete")) {
+            Destroy(this.gameObject);
         }
     }
 }

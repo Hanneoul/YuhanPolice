@@ -18,7 +18,7 @@ public class progressbar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!GameManager._instance.isEenmy) {
+        if(!GameManager._instance.isEenmy && !GameManager._instance.isOpening) {
             value += (Time.deltaTime);
             pbValue.fillAmount = value / 100;
         }

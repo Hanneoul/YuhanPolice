@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class PlayerCtr : MonoBehaviour
 {
-    [Header("플레이어 점프 스피드")]
+    [Header("플레이어 정보")]
     public float jumpSpeed;
 
     bool jump;
     bool jump_Able = true;
+
+    public GameObject[] healthPoint = new GameObject[2];
+    int hp = 3;
         
     void Update()
     {
         JumpCheck();
+        HP_Checker();
     }
 
     // 점프 버튼 함수
@@ -48,5 +52,25 @@ public class PlayerCtr : MonoBehaviour
             jump_Able = true;
         }
     }
+    //체력 감소에 따른 체력 아이콘 비활성화
+    void HP_Checker()
+    {
+        if (hp <= 0)
+        {
+            gameObject.SetActive(false);
+        }
 
+        if (hp <= 2)
+        {
+            healthPoint[hp].SetActive(false);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("block") || collision.CompareTag("UpObj"))
+        {
+            hp--;
+        }
+    }
 }

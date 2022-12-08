@@ -42,17 +42,17 @@ public class GameManager : MonoBehaviour
 
     public void EnemyTouchTimeOver() {
         // Enemy Over
-        creditsOn(credits[4]);
+        StartCoroutine(creditsOn(credits[4]));
     }
 
     public void EnemyTouch() {
         // Enemy Clear
-        creditsOn(credits[3]);
+        StartCoroutine(creditsOn(credits[3]));
     }
 
     IEnumerator creditsOn(GameObject scnces) {
         scnces.SetActive(true);
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(1.5f);
         scnces.SetActive(false);
         isEenmy = false;
         isTouch = false;

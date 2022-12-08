@@ -104,7 +104,9 @@ public class ObjectManager : MonoBehaviour
         int spawnNum = (int) stages[spawnIndex].pos;
         GameObject spawnObejct = Instantiate(PrefabList[hurdleNum], spawnPoints[spawnNum].transform.position, Quaternion.identity);
         hurdle hurdle = spawnObejct.GetComponent<hurdle>();
-        hurdle.speed = (int) stages[spawnIndex].speed;
+        if(hurdleNum != 4) {
+            hurdle.speed = (int) stages[spawnIndex].speed;
+        }
         if(hurdleNum == 3) {
             gameManager.isEenmy = true;
         }

@@ -7,7 +7,6 @@ using UnityEngine.EventSystems;
 public class EnemyTouch : MonoBehaviour, IPointerClickHandler
 {
     public Image frontImage;
-    public GameManager gameManager;
     float value;
     
     public bool isTouch;
@@ -15,7 +14,6 @@ public class EnemyTouch : MonoBehaviour, IPointerClickHandler
     // Start is called before the first frame update
     void Start()
     {
-        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         frontImage.fillAmount = 0;
     }
 
@@ -26,7 +24,7 @@ public class EnemyTouch : MonoBehaviour, IPointerClickHandler
         value += (Time.deltaTime);
         frontImage.fillAmount = value / 5;
         if(frontImage.fillAmount == 1) {
-            gameManager.EnemyTouchTimeOver();
+            GameManager._instance.EnemyTouchTimeOver();
             Destroy(this.gameObject);
         }
     }
@@ -34,11 +32,11 @@ public class EnemyTouch : MonoBehaviour, IPointerClickHandler
     public void OnPointerClick(PointerEventData eventData)
     {
         Debug.Log("Touch");
-        gameManager.isTouch = true;
-        gameManager.isEenmy = false;
+        GameManager._instance.isTouch = true;
+        GameManager._instance.isEenmy = false;
         Destroy(this.gameObject);
         isTouch = true;
-        gameManager.EnemyTouch();
+        GameManager._instance.EnemyTouch();
         // todo 원래 자리로 돌아가는 로직
     }
 

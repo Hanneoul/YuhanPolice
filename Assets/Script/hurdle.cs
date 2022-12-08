@@ -16,6 +16,7 @@ public class hurdle : MonoBehaviour
     
     public GameObject touch;
 
+
     
     void Start()
     {
@@ -27,9 +28,10 @@ public class hurdle : MonoBehaviour
         if(!isStop) {
             this.gameObject.transform.Translate(Vector2.left * speed * Time.deltaTime);
         }
-        if(Enemy) {
-            
+        if(GameManager._instance.isTouch) {
+            Destroy(this.gameObject);
         }
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

@@ -105,6 +105,9 @@ public class ObjectManager : MonoBehaviour
         GameObject spawnObejct = Instantiate(PrefabList[hurdleNum], spawnPoints[spawnNum].transform.position, Quaternion.identity);
         hurdle hurdle = spawnObejct.GetComponent<hurdle>();
         hurdle.speed = (int) stages[spawnIndex].speed;
+        if(hurdleNum == 3) {
+            gameManager.isEenmy = true;
+        }
         spawnIndex++;
         // index++;
         if(spawnIndex >= stages.Count) {
@@ -117,7 +120,7 @@ public class ObjectManager : MonoBehaviour
 
     void Update() {
         curSpawnDelay += Time.deltaTime;
-        if(curSpawnDelay > nextSpwanDelay && !spawnEnd) {
+        if(curSpawnDelay > nextSpwanDelay && !spawnEnd && !gameManager.isEenmy && !gameManager.isOpening) {
             spawn();    
             curSpawnDelay = 0;
         }

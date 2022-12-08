@@ -8,7 +8,10 @@ public class GameManager : MonoBehaviour
     public bool isOpening;
     // 범인 등장
     public bool isEenmy;
+    public bool isTouch;
+    float times;
 
+    public GameObject[] credits;
     public static GameManager Instance
     {
         get
@@ -37,5 +40,23 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
+    public void EnemyTouchTimeOver() {
+        // Enemy Over
+        creditsOn(credits[4]);
+    }
+
+    public void EnemyTouch() {
+        // Enemy Clear
+        creditsOn(credits[3]);
+    }
+
+    IEnumerator creditsOn(GameObject scnces) {
+        scnces.SetActive(true);
+        yield return new WaitForSeconds(1f);
+        scnces.SetActive(false);
+        isEenmy = false;
+        isTouch = false;
+        yield return 0;
+    }
 
 }

@@ -20,10 +20,11 @@ public class progressbar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        value += (Time.deltaTime);
-
-        pbValue.fillAmount = value / 100;
-
+        if(!gameManager.isEenmy) {
+            value += (Time.deltaTime);
+            pbValue.fillAmount = value / 100;
+        }
+        
         if(pbValue.fillAmount == 1) {
             // 스테이지 클리어
         }

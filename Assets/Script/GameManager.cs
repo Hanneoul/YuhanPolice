@@ -5,8 +5,9 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager _instance;
-
-    
+    public bool isOpening;
+    // 범인 등장
+    public bool isEenmy;
 
     public static GameManager Instance
     {

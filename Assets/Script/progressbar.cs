@@ -7,10 +7,13 @@ public class progressbar : MonoBehaviour
 {
     public Image pbValue;
 
+    public GameManager gameManager;
+
     float value;
     // Start is called before the first frame update
     void Start()
     {
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         pbValue.fillAmount = 0;
     }
 

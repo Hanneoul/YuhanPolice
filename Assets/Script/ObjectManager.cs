@@ -5,7 +5,7 @@ using System.IO;
 
 public class ObjectManager : MonoBehaviour
 {
-
+    public GameManager gameManager;
     // Stage 별 생성할 Object 배열
     public List<StageObject> stages;
     // Prefab 스폰 위치 ( 위, 중앙, 아래 )
@@ -14,6 +14,7 @@ public class ObjectManager : MonoBehaviour
     public GameObject[] PrefabList;
     // 현재 스폰된 순서
     public int spawnIndex;
+    
     public float curSpawnDelay;
     public float nextSpwanDelay;
 
@@ -23,6 +24,7 @@ public class ObjectManager : MonoBehaviour
 
     void Start()
     {
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         ReadSpawnFile();
     }
     void ReadSpawnFile()

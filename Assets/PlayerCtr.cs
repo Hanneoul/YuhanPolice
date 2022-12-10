@@ -4,18 +4,21 @@ using UnityEngine;
 
 public class PlayerCtr : MonoBehaviour
 {
-    [Header("ÇÃ·¹ÀÌ¾î Á¡ÇÁ ½ºÇÇµå")]
+    [Header("ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Çµï¿½")]
     public float jumpSpeed;
 
     bool jump;
     bool jump_Able = true;
+    public GameObject[] healthPoint = new GameObject[2];
+    int hp = 3;
         
     void Update()
     {
         JumpCheck();
+        HP_Checker();
     }
 
-    // Á¡ÇÁ ¹öÆ° ÇÔ¼ö
+    // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Æ° ï¿½Ô¼ï¿½
     public void Jump()
     {
         if (jump == false && jump_Able == true)
@@ -25,7 +28,7 @@ public class PlayerCtr : MonoBehaviour
         }
     }
 
-    // Á¡ÇÁ ±â´É ÇÔ¼ö
+    // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½Ô¼ï¿½
     void JumpCheck()
     {
         if (this.gameObject.transform.position.y >= 0f)
@@ -46,6 +49,25 @@ public class PlayerCtr : MonoBehaviour
         }else if (this.gameObject.transform.position.y <= -3f)
         {
             jump_Able = true;
+        }
+    }
+
+    void HP_Checker()
+    {
+        if (hp <= 0)
+        {
+            gameObject.SetActive(false);
+        }
+        if (hp <= 2)
+        {
+            healthPoint[hp].SetActive(false);
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("block") || collision.CompareTag("UpObj"))
+        {
+            hp--;
         }
     }
 

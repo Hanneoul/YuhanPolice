@@ -1,3 +1,4 @@
+using System.Net.Mime;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +7,7 @@ using System.IO;
 public class ObjectManager : MonoBehaviour
 {
     public GameManager gameManager;
+    public ScriptMnager scriptMnager;
     // Stage 별 생성할 Object 배열
     public List<StageObject> stages;
     // Prefab 스폰 위치 ( 위, 중앙, 아래 )
@@ -80,6 +82,7 @@ public class ObjectManager : MonoBehaviour
         // int index = 0;
         int hurdleNum = 0;
         int spriteNum = 0;
+        int temp = stageNum -1;
         switch(stages[spawnIndex].PrefabObject) {
             case 0:
             // 장애물 하단
@@ -87,7 +90,7 @@ public class ObjectManager : MonoBehaviour
             // Stage 2 일 경우 2
             // Stage 3 일 경우 4
                 hurdleNum = 0;
-                spriteNum = hurdleNum + stageNum;
+                spriteNum = temp * 2;
                 break; 
             case 1:
             // 장애물 상단
@@ -95,7 +98,7 @@ public class ObjectManager : MonoBehaviour
             // Stage 2 일 경우 3
             // Stage 3 일 경우 5
                 hurdleNum = 1;
-                spriteNum = hurdleNum + stageNum;
+                spriteNum = (temp * 2) + 1;
                 break; 
             case 2:
             // 아이템
@@ -107,19 +110,27 @@ public class ObjectManager : MonoBehaviour
             // Stage 2 일 경우 2 ,3
             // Stage 3 일 경우 4, 5
                 hurdleNum = 3;
-                spriteNum = hurdleNum + stageNum;
+                spriteNum = Random.Range(temp, temp + 1);
                 break;
             case 4:
             // todo 심볼 스폰
                 hurdleNum = 4;
                 break;
         }
+        Debug.Log(spriteNum);
         int spawnNum = (int) stages[spawnIndex].pos;
         GameObject spawnObejct = Instantiate(PrefabList[hurdleNum], spawnPoints[spawnNum].transform.position, Quaternion.identity);
         hurdle hurdle = spawnObejct.GetComponent<hurdle>();
         
         if(hurdleNum != 4) {
             hurdle.speed = (int) stages[spawnIndex].speed;
+            if(hurdleNum != 2) {
+                hurdle.mainImage = scriptMnager.hurdleImages[spriteNum];
+            }
+            
+        }
+        else {
+            hurdle.GetComponent<SpriteRenderer>().sprite = scriptMnager.symbolImages[stageNum - 1];
         }
         if(hurdleNum == 3) {
             gameManager.isEenmy = true;
@@ -136,7 +147,7 @@ public class ObjectManager : MonoBehaviour
 
     void Update() {
         curSpawnDelay += Time.deltaTime;
-        if(curSpawnDelay > nextSpwanDelay && !spawnEnd && !gameManager.isEenmy && !gameManager.isOpening && !gameManager.isGameEnd) {
+        if(curSpawnDelay > nextSpwanDelay && !spawnEnd && !gameManager.isEenmy && !gameManager.isOpening) {
             spawn();    
             curSpawnDelay = 0;
         }

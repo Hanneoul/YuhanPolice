@@ -1915,6 +1915,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 0}
+  scriptMnager: {fileID: 896723278}
   spawnPoints:
   - {fileID: 277216782}
   - {fileID: 885378194}

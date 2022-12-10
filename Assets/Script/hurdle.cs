@@ -11,6 +11,8 @@ public class hurdle : MonoBehaviour
     public bool down_Obj;
     public bool isStop;
 
+    public Sprite mainImage;
+
     
     [Header("����")]
     public int speed;
@@ -21,7 +23,7 @@ public class hurdle : MonoBehaviour
     
     void Start()
     {
-        
+        this.gameObject.GetComponent<SpriteRenderer>().sprite = mainImage;
     }
         
     void Update()

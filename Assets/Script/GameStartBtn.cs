@@ -10,6 +10,7 @@ public class GameStartBtn : MonoBehaviour, IPointerClickHandler
     public void OnPointerClick(PointerEventData eventData)
     {
         Debug.Log("Touch " + stageNum);
-
+        MainManager._Maininstance.StageNum = stageNum;
+        SceneManager.LoadScene("SystemScene");
     }
 }

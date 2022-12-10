@@ -27,6 +27,7 @@ public class ObjectManager : MonoBehaviour
     void Start()
     {
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        stageNum = MainManager._Maininstance.StageNum;
         ReadSpawnFile();
     }
     void ReadSpawnFile()

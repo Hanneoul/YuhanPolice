@@ -25,6 +25,8 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI stageClearProgressText;
     public Image endingImage;
 
+    [Header("GameEnding")]
+    public GameObject endingobj;
     public GameObject[] credits;
     public static GameManager Instance
     {
@@ -56,6 +58,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         isOpening = true;
+        StageNum = MainManager._Maininstance.StageNum;
     }
 
     public void EnemyTouchTimeOver() {
@@ -83,6 +86,9 @@ public class GameManager : MonoBehaviour
         stageClearProgressText.text = int.Parse(gameprogress.ToString()).ToString() + " %";
         endingImage.sprite = scriptMnager.stageClearImages[StageNum];
         stageClear.SetActive(true);
+        // todo 심볼이 3개라면 Ending 오브젝트 활성화 다음으로 클릭 시
+
     }
 
+    
 }

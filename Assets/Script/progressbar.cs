@@ -21,6 +21,7 @@ public class progressbar : MonoBehaviour
         if(!GameManager._instance.isEenmy && !GameManager._instance.isOpening) {
             value += (Time.deltaTime);
             pbValue.fillAmount = value / 100;
+            GameManager._instance.gameprogress = pbValue.fillAmount * 100;
         }
         
         if(pbValue.fillAmount == 1) {

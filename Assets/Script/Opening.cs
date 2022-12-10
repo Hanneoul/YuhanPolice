@@ -8,6 +8,7 @@ public class Opening : MonoBehaviour
 {
     public TextMeshProUGUI openingText;
     public ScriptMnager scriptMnager;
+    public Image openingImage;
 
     void Awake()
     {
@@ -18,6 +19,7 @@ public class Opening : MonoBehaviour
     void Start()
     {
         int ram = Random.Range(0,4);
+        openingImage.sprite = scriptMnager.openingImages[ram];
         StartCoroutine(Typing(openingText,scriptMnager.openingScript[ram].Strings, 0.2f));
     }
 
@@ -33,10 +35,11 @@ public class Opening : MonoBehaviour
             for (int i = 0; i < message.Length; i++) 
             { 
                 typingText.text = message.Substring(0, i + 1); 
-                yield return new WaitForSeconds(speed); 
-            } 
+                yield return new WaitForSeconds(speed);
+            }
+            yield return new WaitForSeconds(1F);
         }
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(1f);
         GameManager._instance.isOpening = false;
         this.gameObject.SetActive(false);
     } 

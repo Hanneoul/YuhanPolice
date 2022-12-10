@@ -20,7 +20,7 @@ public class Opening : MonoBehaviour
     {
         int ram = Random.Range(0,4);
         openingImage.sprite = scriptMnager.openingImages[ram];
-        StartCoroutine(Typing(openingText,scriptMnager.openingScript[ram].Strings, 0.2f));
+        StartCoroutine(Typing(openingText,scriptMnager.openingScript[ram].Strings, 0.1f));
     }
 
     // Update is called once per frame

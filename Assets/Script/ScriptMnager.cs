@@ -15,4 +15,12 @@ public class ScriptMnager : MonoBehaviour
     public List<initList> endingScript;
     public List<initList> playerScript;
     public Sprite[] openingImages;
+
+    public Sprite[] hurdleImages;
+
+    public Sprite[] symbolImages;
+
+    public Sprite[] stageClearImages;
+
+    public Sprite[] EnemyImage;
 }

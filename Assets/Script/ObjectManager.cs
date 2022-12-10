@@ -79,14 +79,23 @@ public class ObjectManager : MonoBehaviour
     public void spawn() {
         // int index = 0;
         int hurdleNum = 0;
+        int spriteNum = 0;
         switch(stages[spawnIndex].PrefabObject) {
             case 0:
             // 장애물 하단
+            // Stage 1 일 경우 0 
+            // Stage 2 일 경우 2
+            // Stage 3 일 경우 4
                 hurdleNum = 0;
+                spriteNum = hurdleNum + stageNum;
                 break; 
             case 1:
             // 장애물 상단
+            // Stage 1 일 경우 1 
+            // Stage 2 일 경우 3
+            // Stage 3 일 경우 5
                 hurdleNum = 1;
+                spriteNum = hurdleNum + stageNum;
                 break; 
             case 2:
             // 아이템
@@ -94,7 +103,11 @@ public class ObjectManager : MonoBehaviour
                 break;
             case 3:
             // todo 범인 스폰 GAMEMANAGER와 연동해서 체크
+            // Stage 1 일 경우 0 ,1 
+            // Stage 2 일 경우 2 ,3
+            // Stage 3 일 경우 4, 5
                 hurdleNum = 3;
+                spriteNum = hurdleNum + stageNum;
                 break;
             case 4:
             // todo 심볼 스폰
@@ -104,6 +117,7 @@ public class ObjectManager : MonoBehaviour
         int spawnNum = (int) stages[spawnIndex].pos;
         GameObject spawnObejct = Instantiate(PrefabList[hurdleNum], spawnPoints[spawnNum].transform.position, Quaternion.identity);
         hurdle hurdle = spawnObejct.GetComponent<hurdle>();
+        
         if(hurdleNum != 4) {
             hurdle.speed = (int) stages[spawnIndex].speed;
         }
@@ -122,7 +136,7 @@ public class ObjectManager : MonoBehaviour
 
     void Update() {
         curSpawnDelay += Time.deltaTime;
-        if(curSpawnDelay > nextSpwanDelay && !spawnEnd && !gameManager.isEenmy && !gameManager.isOpening) {
+        if(curSpawnDelay > nextSpwanDelay && !spawnEnd && !gameManager.isEenmy && !gameManager.isOpening && !gameManager.isGameEnd) {
             spawn();    
             curSpawnDelay = 0;
         }

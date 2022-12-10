@@ -704,14 +704,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: edfcea08caa15dd4e9a7f716ba887230, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 79b9c86036b9ef04db58a570bd75c1fd, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1211,11 +1211,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e791f95509420a94f950c5edc4bad692, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  StageNum: 0
+  scriptMnager: {fileID: 896723278}
   isOpening: 0
   isEenmy: 0
   isTouch: 0
   isTimeout: 0
+  isGameEnd: 0
+  stageClear: {fileID: 1290469263}
   gameprogress: 0
+  stageClearProgressText: {fileID: 1686343791}
+  endingImage: {fileID: 264660827}
   credits:
   - {fileID: 828086495}
   - {fileID: 1290469263}
@@ -1320,9 +1326,9 @@ MonoBehaviour:
     - "\uADF8\uAC83\uC740 \uBC14\uB85C... \uACBD\uCC30\uC744 \uC0C1\uC9D5\uD558\uB294
       \uC2EC\uBCFC\uC774 \uC0AC\uB77C\uC9C0\uACE0 \uB9D0\uC558\uB2E4\uB294 \uAC83!"
   - Strings:
-    - "\uC2EC\uBCFC\uC774 \uC0AC\uB77C\uC9C0\uC790 \uACBD\uCC30\uC11C\uC5D0\uC11C
-      \uD758\uB7EC\uB098\uC624\uB358 \uC815\uC758 \uC5D0\uB108\uC9C0\uAC00 \uAE09\uACA9\uD788
-      \uD558\uB77D\uD588\uACE0,"
+    - "\uC2EC\uBCFC\uC774 \uC0AC\uB77C\uC9C0\uC790 .."
+    - "\uACBD\uCC30\uC11C\uC5D0\uC11C \uD758\uB7EC\uB098\uC624\uB358 \uC815\uC758
+      \uC5D0\uB108\uC9C0\uAC00 \uAE09\uACA9\uD788 \uD558\uB77D\uD588\uACE0,"
     - "\uACB0\uAD6D \uBD80\uCC9C\uC2DC\uB294 \uC81C 2\uC758 \uACE0\uB2F4\uC2DC\uAC00
       \uB418\uC5B4\uBC84\uB9AC\uACE0 \uB9D0\uC558\uB2E4."
   - Strings:
@@ -1382,6 +1388,28 @@ MonoBehaviour:
   - {fileID: 21300000, guid: f4ca019890872e943bdc1abac6f47504, type: 3}
   - {fileID: 21300000, guid: 08716f509899c3947ad74b65037aaa1a, type: 3}
   - {fileID: 21300000, guid: 2f8df364be3775e419a33fe2aadef1d8, type: 3}
+  hurdleImages:
+  - {fileID: 21300000, guid: 5ef70415f2e4b17468d7fcffdb3c513b, type: 3}
+  - {fileID: 21300000, guid: 38f4d356a2cce5a4497f40e221c1b5c8, type: 3}
+  - {fileID: 21300000, guid: ed62bbee5a66aec40aadb63a94fd967b, type: 3}
+  - {fileID: 21300000, guid: 2618628adde6c494c90cce426c42717a, type: 3}
+  - {fileID: 21300000, guid: f157922cdd64ce947bd974c2e83f6249, type: 3}
+  - {fileID: 21300000, guid: a9a3e0a3e0fe0b047813a1c8bb4c1502, type: 3}
+  symbolImages:
+  - {fileID: 21300000, guid: 8d14a5127200e854d926d723765f40dd, type: 3}
+  - {fileID: 21300000, guid: 5d4dad7a2ab731747a32850f10821427, type: 3}
+  - {fileID: 21300000, guid: df255240a0fade048b6e7c0cb5d02a35, type: 3}
+  stageClearImages:
+  - {fileID: 21300000, guid: 7b6901dd0b0a78a489cfe3846b289b63, type: 3}
+  - {fileID: 21300000, guid: 92615ec10fe07a54cb0ba545851ec073, type: 3}
+  - {fileID: 21300000, guid: 22f631e66578f1846acbae6036e87079, type: 3}
+  EnemyImage:
+  - {fileID: 21300000, guid: ab515aa2726efee40b4d1369ade30b86, type: 3}
+  - {fileID: 21300000, guid: 84fea4c6915845346ad7741692a04a9f, type: 3}
+  - {fileID: 21300000, guid: b5e6db67879255b4c9127f18af6b27f6, type: 3}
+  - {fileID: 21300000, guid: 529f2c6e3e9f11f42879d9ee51e9bf96, type: 3}
+  - {fileID: 21300000, guid: 74dffa2ba31b7f14590eb2bb4f8be724, type: 3}
+  - {fileID: 21300000, guid: 0b7c25ca88696c245953afeb1a7792a8, type: 3}
 --- !u!1 &945965901
 GameObject:
   m_ObjectHideFlags: 0
@@ -2428,7 +2456,7 @@ GameObject:
   - component: {fileID: 1297615940}
   - component: {fileID: 1297615939}
   m_Layer: 5
-  m_Name: Image
+  m_Name: BackGroundImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3504,7 +3532,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: edfcea08caa15dd4e9a7f716ba887230, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8eb107964325ff242b8ec6bf5a1cc454, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

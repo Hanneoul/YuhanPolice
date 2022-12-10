@@ -1,19 +1,29 @@
+using System.Net.Mime;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager _instance;
+    public int StageNum;
+    public ScriptMnager scriptMnager;
     public bool isOpening;
     // 범인 등장
     public bool isEenmy;
     public bool isTouch;
     public bool isTimeout;
+    public bool isGameEnd;
     float times;
 
+    [Header("Stage Clear Object")]
+    public GameObject stageClear;
     public float gameprogress;
+    public TextMeshProUGUI stageClearProgressText;
+    public Image endingImage;
 
     public GameObject[] credits;
     public static GameManager Instance
@@ -66,6 +76,13 @@ public class GameManager : MonoBehaviour
         isTouch = false;
         isTimeout = false;
         yield return 0;
+    }
+
+    public void StageClear() {
+        isGameEnd = true;
+        stageClearProgressText.text = int.Parse(gameprogress.ToString()).ToString() + " %";
+        endingImage.sprite = scriptMnager.stageClearImages[StageNum];
+        stageClear.SetActive(true);
     }
 
 }

@@ -231,7 +231,7 @@ Transform:
   - {fileID: 1004298047}
   - {fileID: 1167476125}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &277216782
 GameObject:
@@ -348,11 +348,16 @@ GameObject:
   m_Component:
   - component: {fileID: 343531799}
   - component: {fileID: 343531800}
+
+  - component: {fileID: 343531802}
+  - component: {fileID: 343531803}
+
   - component: {fileID: 343531801}
   - component: {fileID: 343531802}
+
   m_Layer: 0
   m_Name: DetectTop
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -364,13 +369,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 343531798}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6, y: 3, z: 0}
-  m_LocalScale: {x: 0.2, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.6999998, y: 3, z: 0}
+  m_LocalScale: {x: 1, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1702550198}
-  m_RootOrder: 0
+  m_Father: {fileID: 1415443764}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &343531800
 BoxCollider2D:
@@ -398,7 +403,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &343531801
+--- !u!114 &343531802
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -407,16 +412,37 @@ MonoBehaviour:
   m_GameObject: {fileID: 343531798}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: b01578e5b66f1dd42ab41cea5991e7ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+
+--- !u!50 &343531803
+Rigidbody2D:
+  serializedVersion: 4
+
 --- !u!114 &343531802
 MonoBehaviour:
+
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 343531798}
+
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b01578e5b66f1dd42ab41cea5991e7ca, type: 3}
@@ -498,6 +524,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 363905332}
   m_CullTransparentMesh: 1
+
 --- !u!1 &553307788
 GameObject:
   m_ObjectHideFlags: 0
@@ -683,7 +710,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &828086495
 GameObject:
@@ -1233,7 +1260,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 343531801}
+      - m_Target: {fileID: 343531802}
         m_TargetAssemblyTypeName: Action, Assembly-CSharp
         m_MethodName: ActionBtn
         m_Mode: 1
@@ -1349,7 +1376,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1052880089
 GameObject:
@@ -1907,7 +1934,11 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+
+--- !u!1 &1415443763
+
 --- !u!1 &1290469263
+
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1915,26 +1946,49 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+
+  - component: {fileID: 1415443764}
+  m_Layer: 0
+  m_Name: PlayerCtr
+
   - component: {fileID: 1290469264}
   m_Layer: 5
   m_Name: StageClear
+
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
+
+  m_IsActive: 1
+--- !u!4 &1415443764
+Transform:
+
   m_IsActive: 0
 --- !u!224 &1290469264
 RectTransform:
+
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+
+  m_GameObject: {fileID: 1415443763}
+
   m_GameObject: {fileID: 1290469263}
+
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+
+  - {fileID: 1702550198}
+  - {fileID: 343531799}
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+
   - {fileID: 1297615938}
   m_Father: {fileID: 1537609445}
   m_RootOrder: 5
@@ -2020,6 +2074,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1297615937}
   m_CullTransparentMesh: 1
+
 --- !u!1 &1419618168
 GameObject:
   m_ObjectHideFlags: 0
@@ -2119,7 +2174,7 @@ Transform:
   - {fileID: 1120122809}
   - {fileID: 896723277}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1537609441
 GameObject:
@@ -2222,7 +2277,7 @@ RectTransform:
   - {fileID: 312415250}
   - {fileID: 320485498}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2392,14 +2447,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1702550196}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -7.7, y: -3, z: 0}
   m_LocalScale: {x: 1, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 343531799}
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_Children: []
+  m_Father: {fileID: 1415443764}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1702550199
 MonoBehaviour:
@@ -2414,6 +2468,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpSpeed: 10
+  healthPoint:
+  - {fileID: 1566691931}
+  - {fileID: 1004298046}
+  - {fileID: 1167476124}
 --- !u!61 &1702550200
 BoxCollider2D:
   m_ObjectHideFlags: 0

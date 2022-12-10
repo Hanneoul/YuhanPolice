@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class hurdle : MonoBehaviour
 {
@@ -23,7 +24,7 @@ public class hurdle : MonoBehaviour
     
     void Start()
     {
-        this.gameObject.GetComponent<SpriteRenderer>().sprite = mainImage;
+        this.gameObject.GetComponent<Image>().sprite = mainImage;
     }
         
     void Update()

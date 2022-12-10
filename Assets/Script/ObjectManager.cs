@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
+using UnityEngine.UI;
 
 public class ObjectManager : MonoBehaviour
 {
@@ -120,7 +121,7 @@ public class ObjectManager : MonoBehaviour
         }
         Debug.Log(spriteNum);
         int spawnNum = (int) stages[spawnIndex].pos;
-        GameObject spawnObejct = Instantiate(PrefabList[hurdleNum], spawnPoints[spawnNum].transform.position, Quaternion.identity);
+        GameObject spawnObejct = Instantiate(PrefabList[hurdleNum], spawnPoints[spawnNum].transform.position, Quaternion.identity, GameObject.Find("Canvas").transform);
         hurdle hurdle = spawnObejct.GetComponent<hurdle>();
         
         if(hurdleNum != 4) {
@@ -128,10 +129,13 @@ public class ObjectManager : MonoBehaviour
             if(hurdleNum != 2) {
                 hurdle.mainImage = scriptMnager.hurdleImages[spriteNum];
             }
+            if(hurdleNum == 3) {
+                hurdle.mainImage = scriptMnager.EnemyImage[spawnNum];
+            }
             
         }
         else {
-            hurdle.GetComponent<SpriteRenderer>().sprite = scriptMnager.symbolImages[stageNum - 1];
+            hurdle.GetComponent<Image>().sprite = scriptMnager.symbolImages[stageNum - 1];
         }
         if(hurdleNum == 3) {
             gameManager.isEenmy = true;

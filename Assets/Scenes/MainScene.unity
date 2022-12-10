@@ -435,7 +435,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &376509662
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1457,6 +1457,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b367c9b6c941964c9d5c14f3d4cddd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  symbolSaveData: 000000000000000000000000
+  symbolsImage:
+  - {fileID: 679186302}
+  - {fileID: 597822946}
+  - {fileID: 210082339}
   StageNum: 0
 --- !u!1 &1855344157
 GameObject:

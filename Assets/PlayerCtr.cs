@@ -10,7 +10,7 @@ public class PlayerCtr : MonoBehaviour
     bool jump;
     bool jump_Able = true;
     public GameObject[] healthPoint = new GameObject[3];
-    int hp = 3;
+    int hp = 3000;
         
     void Update()
     {

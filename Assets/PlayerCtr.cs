@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class PlayerCtr : MonoBehaviour
 {
-    [Header("�÷��̾� ���� ���ǵ�")]
+    [Header("Player JumpSpedd")]
     public float jumpSpeed;
 
     bool jump;
     bool jump_Able = true;
-    public GameObject[] healthPoint = new GameObject[2];
+    public GameObject[] healthPoint = new GameObject[3];
     int hp = 3;
         
     void Update()
@@ -18,7 +18,7 @@ public class PlayerCtr : MonoBehaviour
         HP_Checker();
     }
 
-    // ���� ��ư �Լ�
+    // Player Jump
     public void Jump()
     {
         if (jump == false && jump_Able == true)
@@ -28,7 +28,7 @@ public class PlayerCtr : MonoBehaviour
         }
     }
 
-    // ���� ��� �Լ�
+    // Jump Check
     void JumpCheck()
     {
         if (this.gameObject.transform.position.y >= 0f)
@@ -57,6 +57,7 @@ public class PlayerCtr : MonoBehaviour
         if (hp <= 0)
         {
             gameObject.SetActive(false);
+            Time.timeScale = 0f;
         }
         if (hp <= 2)
         {

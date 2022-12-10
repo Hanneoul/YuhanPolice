@@ -112,14 +112,16 @@ public class ObjectManager : MonoBehaviour
             // Stage 2 일 경우 2 ,3
             // Stage 3 일 경우 4, 5
                 hurdleNum = 3;
-                spriteNum = Random.Range(temp, temp + 1);
+                int a = temp * 2;
+                int b = (temp * 2) + 1;
+                spriteNum = Random.Range(a, b);
                 break;
             case 4:
             // todo 심볼 스폰
                 hurdleNum = 4;
                 break;
         }
-        Debug.Log(spriteNum);
+        Debug.Log(stageNum + " " + " " +hurdleNum+" "+  spriteNum);
         int spawnNum = (int) stages[spawnIndex].pos;
         GameObject spawnObejct = Instantiate(PrefabList[hurdleNum], spawnPoints[spawnNum].transform.position, Quaternion.identity, GameObject.Find("Canvas").transform);
         hurdle hurdle = spawnObejct.GetComponent<hurdle>();
@@ -130,13 +132,13 @@ public class ObjectManager : MonoBehaviour
                 hurdle.mainImage = scriptMnager.hurdleImages[spriteNum];
             }
             if(hurdleNum == 3) {
-                hurdle.mainImage = scriptMnager.EnemyImage[spawnNum];
+            hurdle.mainImage = scriptMnager.EnemyImage[spriteNum];
             }
-            
         }
         else {
             hurdle.GetComponent<Image>().sprite = scriptMnager.symbolImages[stageNum - 1];
         }
+        
         if(hurdleNum == 3) {
             gameManager.isEenmy = true;
         }

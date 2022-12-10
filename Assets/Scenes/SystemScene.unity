@@ -1388,6 +1388,11 @@ MonoBehaviour:
   - {fileID: 21300000, guid: f4ca019890872e943bdc1abac6f47504, type: 3}
   - {fileID: 21300000, guid: 08716f509899c3947ad74b65037aaa1a, type: 3}
   - {fileID: 21300000, guid: 2f8df364be3775e419a33fe2aadef1d8, type: 3}
+  endingImages:
+  - {fileID: 21300000, guid: f2a0a8fab90c7d8489d7c2ab897bdb07, type: 3}
+  - {fileID: 21300000, guid: 0a8f5d5a45519c64687e5097e68889ae, type: 3}
+  - {fileID: 21300000, guid: b4022977ef5260243bb75e634b16f484, type: 3}
+  - {fileID: 21300000, guid: 58f6e7221eea59a46a203e9c25eb796e, type: 3}
   hurdleImages:
   - {fileID: 21300000, guid: 5ef70415f2e4b17468d7fcffdb3c513b, type: 3}
   - {fileID: 21300000, guid: 38f4d356a2cce5a4497f40e221c1b5c8, type: 3}
@@ -3116,7 +3121,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1895579790
 RectTransform:
   m_ObjectHideFlags: 0

@@ -60,6 +60,7 @@ public class GameManager : MonoBehaviour
     {
         isOpening = true;
         openigObj.SetActive(true);
+        // todo 테스트 할때 아래 한줄 주석처리 ㄱ
         StageNum = MainManager._Maininstance.StageNum;
     }
 

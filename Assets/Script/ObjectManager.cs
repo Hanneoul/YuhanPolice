@@ -28,6 +28,7 @@ public class ObjectManager : MonoBehaviour
     void Start()
     {
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        // todo 테스트 할때 아래 한줄 주석처리 ㄱ
         stageNum = MainManager._Maininstance.StageNum;
         ReadSpawnFile();
     }

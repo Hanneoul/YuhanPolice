@@ -1552,6 +1552,7 @@ MonoBehaviour:
   - {fileID: 1895579789}
   - {fileID: 312415249}
   - {fileID: 320485497}
+  openigObj: {fileID: 828086495}
 --- !u!4 &861740605
 Transform:
   m_ObjectHideFlags: 0
@@ -2463,11 +2464,11 @@ MonoBehaviour:
   - {fileID: 906037831}
   - {fileID: 445688371}
   PrefabList:
-  - {fileID: 4637726791842391966, guid: 259ee8a4d40980945a5a7f35d52a0d47, type: 3}
-  - {fileID: 5357040915991279285, guid: aff31d54664a06b4bba8403e1d87a6bb, type: 3}
-  - {fileID: 7632988290318105400, guid: 17ee57cf1f31bb946ad1ef38f08e30fa, type: 3}
-  - {fileID: 4903834922589763831, guid: 428fca8fd804aae44b2875774b4fb496, type: 3}
-  - {fileID: 8809949658116609688, guid: 4dee05372d733c947b3c327a9dd3dc66, type: 3}
+  - {fileID: 3199151940982960638, guid: 49a359cb005d40d4c99f370430102299, type: 3}
+  - {fileID: 3607606650826238015, guid: 84e0b238387fa084e833fe6dd3cabcb3, type: 3}
+  - {fileID: 7441012546534688546, guid: 653506b4b25ea7543b30095aa7a7e703, type: 3}
+  - {fileID: 319706233138606217, guid: 4d8df278125f6aa4c9d6fb0272c17f90, type: 3}
+  - {fileID: 3341456219845045836, guid: 57d70eec1693ced43bd5f34a1d475ff8, type: 3}
   spawnIndex: 0
   curSpawnDelay: 0
   nextSpwanDelay: 0

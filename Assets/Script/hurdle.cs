@@ -24,7 +24,7 @@ public class hurdle : MonoBehaviour
     
     void Start()
     {
-        this.gameObject.GetComponent<Image>().sprite = mainImage;
+        this.gameObject.GetComponent<SpriteRenderer>().sprite = mainImage;
     }
         
     void Update()

@@ -33,8 +33,6 @@ public class hurdle : MonoBehaviour
             this.gameObject.transform.Translate(Vector2.left * speed * Time.deltaTime);
         }
         if(GameManager._instance.isTouch || GameManager._instance.isTimeout ) {
-            Debug.Log(this.gameObject.transform.parent.GetComponent<GameObject>());
-            Destroy(this.gameObject.transform.parent.GetComponent<GameObject>());
             Destroy(this.gameObject);
         }
 
@@ -46,13 +44,14 @@ public class hurdle : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             this.GetComponent<BoxCollider2D>().enabled = false;
+            Invoke("deleteObject", 2F);
         }
 
         if (item)
         {
             if(collision.CompareTag("Player"))
             {
-                Destroy(this.gameObject);
+                Destroy(this.gameObject.transform.parent.GetComponent<Transform>().gameObject);
             }
         }
 
@@ -71,7 +70,11 @@ public class hurdle : MonoBehaviour
         }
 
         if(collision.CompareTag("Delete")) {
-            Destroy(this.gameObject);
+            Destroy(this.gameObject.transform.parent.GetComponent<Transform>().gameObject);
         }
+    }
+
+    public void deleteObject() {
+        Destroy(this.gameObject.transform.parent.GetComponent<Transform>().gameObject);
     }
 }

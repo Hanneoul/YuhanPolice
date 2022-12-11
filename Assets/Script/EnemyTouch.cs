@@ -35,7 +35,7 @@ public class EnemyTouch : MonoBehaviour, IPointerClickHandler
         Debug.Log("Touch");
         GameManager._instance.isTouch = true;
         GameManager._instance.isEenmy = false;
-        Destroy(this.gameObject);
+        Destroy(this.gameObject.transform.parent.GetComponent<Transform>().gameObject);
         isTouch = true;
         GameManager._instance.EnemyTouch();
         // todo 원래 자리로 돌아가는 로직

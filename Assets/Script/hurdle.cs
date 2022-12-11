@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class hurdle : MonoBehaviour
 {
-    [Header("��ü��")]
+    [Header("Kind")]
     public bool item;
     public bool Enemy;
     public bool up_Obj;
@@ -15,7 +15,7 @@ public class hurdle : MonoBehaviour
     public Sprite mainImage;
 
     
-    [Header("����")]
+    [Header("Soeed")]
     public int speed;
     
     public GameObject touch;
@@ -35,6 +35,15 @@ public class hurdle : MonoBehaviour
         if(GameManager._instance.isTouch || GameManager._instance.isTimeout ) {
             Destroy(this.gameObject);
         }
+        if (Enemy)
+        {
+            if (transform.position.x < 2f)
+            {
+                isStop = true;
+                GameManager._instance.isDetected = true;
+                gameObject.transform.position = new Vector2(2.1f, transform.position.y);  
+            }
+        }
 
     }
 
@@ -44,7 +53,7 @@ public class hurdle : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             this.GetComponent<BoxCollider2D>().enabled = false;
-            Invoke("deleteObject", 2F);
+            Invoke("deleteObject", 2f);
         }
 
         if (item)
@@ -59,7 +68,9 @@ public class hurdle : MonoBehaviour
         {
             if(collision.CompareTag("Player"))
             {
-                isStop = true;
+                GameManager._instance.isDetected = false;
+
+                //isStop = true;
                 Debug.Log("test");
                 GameObject temp = Instantiate(touch, GameObject.Find("Canvas").transform.localPosition 
                                     + new Vector3(Random.Range(-200,-150),0,0), 

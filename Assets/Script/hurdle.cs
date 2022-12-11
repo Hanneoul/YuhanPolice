@@ -53,7 +53,7 @@ public class hurdle : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             this.GetComponent<BoxCollider2D>().enabled = false;
-            Invoke("deleteObject", 2f);
+            Invoke("deleteObject", 10f);
         }
 
         if (item)

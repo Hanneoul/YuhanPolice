@@ -33,6 +33,8 @@ public class hurdle : MonoBehaviour
             this.gameObject.transform.Translate(Vector2.left * speed * Time.deltaTime);
         }
         if(GameManager._instance.isTouch || GameManager._instance.isTimeout ) {
+            Debug.Log(this.gameObject.transform.parent.GetComponent<GameObject>());
+            Destroy(this.gameObject.transform.parent.GetComponent<GameObject>());
             Destroy(this.gameObject);
         }
 

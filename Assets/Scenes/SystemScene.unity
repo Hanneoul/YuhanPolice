@@ -2472,10 +2472,10 @@ MonoBehaviour:
   gameManager: {fileID: 0}
   scriptMnager: {fileID: 896723278}
   spawnPoints:
-  - {fileID: 688285351}
-  - {fileID: 638129725}
-  - {fileID: 906037831}
-  - {fileID: 445688371}
+  - {fileID: 277216782}
+  - {fileID: 885378194}
+  - {fileID: 1502865324}
+  - {fileID: 2096640359}
   PrefabList:
   - {fileID: 3199151940982960638, guid: 49a359cb005d40d4c99f370430102299, type: 3}
   - {fileID: 3607606650826238015, guid: 84e0b238387fa084e833fe6dd3cabcb3, type: 3}

@@ -28,6 +28,7 @@ public class GameManager : MonoBehaviour
     [Header("GameEnding")]
     public GameObject endingobj;
     public GameObject[] credits;
+    public GameObject openigObj;
     public static GameManager Instance
     {
         get
@@ -58,6 +59,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         isOpening = true;
+        openigObj.SetActive(true);
         StageNum = MainManager._Maininstance.StageNum;
     }
 

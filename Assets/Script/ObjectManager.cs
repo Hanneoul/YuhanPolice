@@ -123,8 +123,8 @@ public class ObjectManager : MonoBehaviour
         }
         Debug.Log(stageNum + " " + " " +hurdleNum+" "+  spriteNum);
         int spawnNum = (int) stages[spawnIndex].pos;
-        GameObject spawnObejct = Instantiate(PrefabList[hurdleNum], spawnPoints[spawnNum].transform.position, Quaternion.identity, GameObject.Find("Canvas").transform);
-        hurdle hurdle = spawnObejct.GetComponent<hurdle>();
+        GameObject spawnObejct = Instantiate(PrefabList[hurdleNum], spawnPoints[spawnNum].transform.position, Quaternion.identity);
+        hurdle hurdle = spawnObejct.GetComponentInChildren<hurdle>();
         
         if(hurdleNum != 4) {
             hurdle.speed = (int) stages[spawnIndex].speed;
@@ -136,7 +136,7 @@ public class ObjectManager : MonoBehaviour
             }
         }
         else {
-            hurdle.GetComponent<Image>().sprite = scriptMnager.symbolImages[stageNum - 1];
+            hurdle.GetComponent<SpriteRenderer>().sprite = scriptMnager.symbolImages[stageNum - 1];
         }
         
         if(hurdleNum == 3) {

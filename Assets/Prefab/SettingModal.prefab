@@ -239,6 +239,7 @@ GameObject:
   - component: {fileID: 6918898907824479069}
   - component: {fileID: 6918898907824479067}
   - component: {fileID: 6918898907824479066}
+  - component: {fileID: 5281581070945264772}
   m_Layer: 5
   m_Name: ExitBtn
   m_TagString: Untagged
@@ -304,6 +305,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &5281581070945264772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6918898907824479068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54ea21e44ac3dc44fb48c84615e76752, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6918898907844525775
 GameObject:
   m_ObjectHideFlags: 0
@@ -315,6 +328,7 @@ GameObject:
   - component: {fileID: 6918898907844525772}
   - component: {fileID: 6918898907844525770}
   - component: {fileID: 6918898907844525773}
+  - component: {fileID: 5685383375502914246}
   m_Layer: 5
   m_Name: SFXSoundBtn
   m_TagString: Untagged
@@ -380,6 +394,22 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &5685383375502914246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6918898907844525775}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be43203d1f0436d43a1f9909725cc426, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bgmSprite:
+  - {fileID: 21300000, guid: 6a8c9be59c68cd045a67f7bc2b3bb93f, type: 3}
+  - {fileID: 21300000, guid: 82962a8116bb26d4fa589909f91eb573, type: 3}
+  isTouch: 0
 --- !u!1 &6918898908681120252
 GameObject:
   m_ObjectHideFlags: 0
@@ -391,6 +421,7 @@ GameObject:
   - component: {fileID: 6918898908681120253}
   - component: {fileID: 6918898908681120251}
   - component: {fileID: 6918898908681120250}
+  - component: {fileID: 1518296848470798658}
   m_Layer: 5
   m_Name: BgmSoundBtn
   m_TagString: Untagged
@@ -456,6 +487,22 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &1518296848470798658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6918898908681120252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c453d91219ec4d94ca814bf318e3903c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bgmSprite:
+  - {fileID: 21300000, guid: 6a8c9be59c68cd045a67f7bc2b3bb93f, type: 3}
+  - {fileID: 21300000, guid: 82962a8116bb26d4fa589909f91eb573, type: 3}
+  isTouch: 0
 --- !u!1 &6918898908959747566
 GameObject:
   m_ObjectHideFlags: 0

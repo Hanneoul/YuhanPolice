@@ -154,11 +154,13 @@ public class ObjectManager : MonoBehaviour
     }
 
     void Update() {
-        curSpawnDelay += Time.deltaTime;
+        if(!gameManager.isOpening) {
+            curSpawnDelay += Time.deltaTime;
+        }
+        
         if(curSpawnDelay > nextSpwanDelay && !spawnEnd && !gameManager.isEenmy && !gameManager.isOpening) {
             spawn();    
             curSpawnDelay = 0;
         }
-
     }
 }

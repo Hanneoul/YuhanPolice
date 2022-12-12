@@ -36,8 +36,7 @@ public class Action : MonoBehaviour
     {
         if (collision.CompareTag("UpObj"))
         {
-            upObj = null;        
-            
+            upObj = null;            
         }
     }
 }

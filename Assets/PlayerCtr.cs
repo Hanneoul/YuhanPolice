@@ -6,25 +6,26 @@ public class PlayerCtr : MonoBehaviour
 {
     [Header("Player JumpSpedd")]
     public float jumpSpeed;
-
+    Animator animator;
     Rigidbody2D rigidbody;
     bool jump;
     bool jump_Able = true;
     public GameObject[] healthPoint = new GameObject[3];
-    public int hp = 3;
+    public int hp;
     private void Awake()
     {
         rigidbody = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
     void Update()
     {
         JumpCheck();
-        HP_Checker();
-        DetectEnemy();
+        HP_Checker();        
     }
 
-    void DetectEnemy()
+    public void Action()
     {
+        animator.SetTrigger("action");
     }
 
     Vector2 jumpVector = new Vector2(0f, 15f);
@@ -35,6 +36,7 @@ public class PlayerCtr : MonoBehaviour
         {
             jump = true;
             jump_Able = false;
+            animator.SetTrigger("jump");
         }
     }
 

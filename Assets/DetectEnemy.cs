@@ -9,15 +9,18 @@ public class DetectEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GameManager._instance.isDetected)
+        if (GameManager._instance.isDetected || GameManager._instance.isSymbol)
         {
             transform.Translate(new Vector2(speed * Time.deltaTime, 0f));
 
         }
-        else
+        else if(GameManager._instance.isTouch)
         {
-            //transform.Translate(new Vector2(-speed * Time.deltaTime, 0f));
-
+            transform.Translate(new Vector2(-speed * Time.deltaTime, 0f));
+            if (gameObject.transform.position.x <= -7f)
+            {
+                GameManager._instance.isTouch = false;
+            }
         }
     }
 }

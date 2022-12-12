@@ -102,6 +102,4 @@ public class GameManager : MonoBehaviour
             endingobj.SetActive(true);
         }
     }
-
-    
 }

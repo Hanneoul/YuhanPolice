@@ -11,7 +11,9 @@ public class SoundStop : MonoBehaviour, IPointerClickHandler
     public void OnPointerClick(PointerEventData eventData)
     {
         setting.SetActive(true);
+        
         AudioManager._Audioinstance.BGMaudioSource.volume = 0.5f;
         GameManager._instance.isOpening = true;
+        Time.timeScale = 0;
     }
 }

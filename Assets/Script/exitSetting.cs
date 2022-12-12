@@ -8,8 +8,9 @@ public class exitSetting : MonoBehaviour, IPointerClickHandler
 {
     public void OnPointerClick(PointerEventData eventData)
     {
-        this.gameObject.transform.parent.gameObject.SetActive(false);
+        this.gameObject.transform.parent.parent.gameObject.SetActive(false);
         AudioManager._Audioinstance.BGMaudioSource.volume = 1f;
         GameManager._instance.isOpening = false;
+        Time.timeScale = 1;
     }
 }

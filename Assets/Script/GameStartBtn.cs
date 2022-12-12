@@ -12,5 +12,6 @@ public class GameStartBtn : MonoBehaviour, IPointerClickHandler
         Debug.Log("Touch " + stageNum);
         MainManager._Maininstance.StageNum = stageNum;
         SceneManager.LoadScene("SystemScene");
+        AudioManager._Audioinstance.bgmchange(1);
     }
 }

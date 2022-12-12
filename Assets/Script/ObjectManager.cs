@@ -137,7 +137,7 @@ public class ObjectManager : MonoBehaviour
             }
         }
         else {
-            hurdle.GetComponent<SpriteRenderer>().sprite = scriptMnager.symbolImages[stageNum - 1];
+            hurdle.mainImage = scriptMnager.symbolImages[stageNum - 1];
         }
         
         if(hurdleNum == 3) {

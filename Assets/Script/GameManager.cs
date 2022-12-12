@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
     public bool isDetected;
     public bool isTimeout;
     public bool isGameEnd;
+    public bool isSymbol;
     float times;
 
     [Header("Stage Clear Object")]

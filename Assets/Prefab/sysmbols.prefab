@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3341456218658988117}
   - component: {fileID: 3341456218658988118}
-  - component: {fileID: 3341456218658988119}
   - component: {fileID: 3341456218658988120}
+  - component: {fileID: 8252540974802213451}
   m_Layer: 0
   m_Name: stage_select_symbol1_on
   m_TagString: Symbol
@@ -86,26 +86,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3341456218658988119
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3341456218658988116}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb5066f0fb5d4934e9422e1f39e67b35, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  item: 0
-  Enemy: 0
-  up_Obj: 0
-  down_Obj: 0
-  isStop: 0
-  mainImage: {fileID: 0}
-  speed: 0
-  touch: {fileID: 8406562480971363535, guid: b1536fb750dcace4580d2d7592ae6ca8, type: 3}
 --- !u!61 &3341456218658988120
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -132,6 +112,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.69, y: 2.23}
   m_EdgeRadius: 0
+--- !u!114 &8252540974802213451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3341456218658988116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 099854098c1a9b74a89ab9f94b49151f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3341456219845045836
 GameObject:
   m_ObjectHideFlags: 0

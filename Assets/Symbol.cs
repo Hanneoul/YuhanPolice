@@ -13,6 +13,7 @@ public class Symbol : MonoBehaviour
     {
         GameManager._instance.isSymbol = false;
         MainManager._Maininstance.symbolSaveData[GameManager._instance.StageNum] = 1;
+        AudioManager._Audioinstance.sfxchange(3);
         GameManager._instance.StageClear();
     }
 }

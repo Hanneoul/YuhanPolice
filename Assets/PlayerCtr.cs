@@ -26,6 +26,7 @@ public class PlayerCtr : MonoBehaviour
     public void Action()
     {
         animator.SetTrigger("action");
+        AudioManager._Audioinstance.sfxchange(0);
     }
 
     Vector2 jumpVector = new Vector2(0f, 15f);
@@ -37,6 +38,7 @@ public class PlayerCtr : MonoBehaviour
             jump = true;
             jump_Able = false;
             animator.SetTrigger("jump");
+            AudioManager._Audioinstance.sfxchange(4);
         }
     }
 

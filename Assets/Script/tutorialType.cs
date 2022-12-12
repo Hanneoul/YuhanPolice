@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class tutorialType : MonoBehaviour
 {
@@ -36,7 +37,8 @@ public class tutorialType : MonoBehaviour
             yield return new WaitForSeconds(1F);
         }
         yield return new WaitForSeconds(1f);
-        GameManager._instance.isOpening = false;
         this.gameObject.SetActive(false);
+        PlayerPrefs.SetInt("Tutorial", 1);
+        SceneManager.LoadScene("MainScene");
     }
 }

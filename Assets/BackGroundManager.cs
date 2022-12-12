@@ -11,7 +11,7 @@ public class BackGroundManager : MonoBehaviour
     {
         if (BackGround[i].transform.position.x <= -75f)
         {
-            BackGround[i].transform.position = new Vector2(45f, 0f);
+            BackGround[i].transform.position = new Vector3(45f, 0f, 10f);
 
             i++;
         }

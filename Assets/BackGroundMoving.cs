@@ -7,5 +7,6 @@ public class BackGroundMoving : MonoBehaviour
     void Update()
     {
         transform.Translate(new Vector2(-3f * Time.deltaTime ,0f));
+        
     }
 }

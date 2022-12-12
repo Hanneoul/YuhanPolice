@@ -94,7 +94,10 @@ public class GameManager : MonoBehaviour
         endingImage.sprite = scriptMnager.stageClearImages[StageNum];
         stageClear.SetActive(true);
         // todo 심볼이 3개라면 Ending 오브젝트 활성화 다음으로 클릭 시
-        
+        if (MainManager._Maininstance.symbolSaveData[0] == 1 && MainManager._Maininstance.symbolSaveData[1] == 1 && MainManager._Maininstance.symbolSaveData[2] == 1)
+        {
+            endingobj.SetActive(true);
+        }
     }
 
     

@@ -62,13 +62,17 @@ public class GameManager : MonoBehaviour
     }
     void Start()
     {
+        if (openigObj != null)
+        {
         isOpening = true;
         openigObj.SetActive(true);
         // todo 테스트 할때 아래 한줄 주석처리 ㄱ
         StageNum = MainManager._Maininstance.StageNum;
+        }
     }
 
     public void EnemyTouchTimeOver() {
+        
         // Enemy Over
         StartCoroutine(creditsOn(credits[4]));
     }
@@ -79,6 +83,8 @@ public class GameManager : MonoBehaviour
     }
 
     IEnumerator creditsOn(GameObject scnces) {
+        if(scnces != null)
+        {
         scnces.SetActive(true);
         yield return new WaitForSeconds(1.5f);
         scnces.SetActive(false);
@@ -86,20 +92,24 @@ public class GameManager : MonoBehaviour
         isTouch = false;
         isTimeout = false;
         yield return 0;
+        }
+
     }
 
     public void StageClear() {
-        isGameEnd = true;
-        stageClearProgressText.text = int.Parse(gameprogress.ToString()).ToString() + " %";
-        endingImage.sprite = scriptMnager.stageClearImages[StageNum];
-        stageClear.SetActive(true);
-        // todo 심볼이 3개라면 Ending 오브젝트 활성화 다음으로 클릭 시
-
-        if (MainManager._Maininstance.symbolSaveData[0] == 1 && MainManager._Maininstance.symbolSaveData[1] == 1 && MainManager._Maininstance.symbolSaveData[2] == 1)
+        if (stageClear != null)
         {
-            endingobj.SetActive(true);
-        }
+            isGameEnd = true;
+            stageClearProgressText.text = int.Parse(gameprogress.ToString()).ToString() + " %";
+            endingImage.sprite = scriptMnager.stageClearImages[StageNum];
+            stageClear.SetActive(true);
+            // todo 심볼이 3개라면 Ending 오브젝트 활성화 다음으로 클릭 시
 
+            if (MainManager._Maininstance.symbolSaveData[0] == 1 && MainManager._Maininstance.symbolSaveData[1] == 1 && MainManager._Maininstance.symbolSaveData[2] == 1)
+            {
+                endingobj.SetActive(true);
+            }
+        }
     }
 
     

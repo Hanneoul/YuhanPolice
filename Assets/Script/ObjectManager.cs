@@ -136,7 +136,7 @@ public class ObjectManager : MonoBehaviour
             hurdle.mainImage = scriptMnager.EnemyImage[spriteNum];
             }
         }
-        else {
+        else if(hurdleNum == 4 ){
             hurdle.mainImage = scriptMnager.symbolImages[stageNum - 1];
         }
         

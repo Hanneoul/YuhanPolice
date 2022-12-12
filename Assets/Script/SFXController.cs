@@ -7,18 +7,18 @@ using UnityEngine.EventSystems;
 public class SFXController : MonoBehaviour, IPointerClickHandler
 {
     public Sprite[] bgmSprite;
-    public bool isTouch = true;
+    public bool isTouch;
     public void OnPointerClick(PointerEventData eventData)
     {
         if(isTouch) {
             isTouch = false;
             this.gameObject.GetComponent<Image>().sprite = bgmSprite[0];
-            AudioManager._Audioinstance.SFXaudioSource.volume = 0;
+            AudioManager._Audioinstance.SFXaudioSource.volume = 1f;
         }
         else {
             isTouch = true;
             this.gameObject.GetComponent<Image>().sprite = bgmSprite[1];
-            AudioManager._Audioinstance.SFXaudioSource.volume = 1f;
+            AudioManager._Audioinstance.SFXaudioSource.volume = 0;
         }
     }
 }

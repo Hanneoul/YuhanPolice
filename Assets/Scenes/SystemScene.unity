@@ -1574,6 +1574,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 529f2c6e3e9f11f42879d9ee51e9bf96, type: 3}
   - {fileID: 21300000, guid: 74dffa2ba31b7f14590eb2bb4f8be724, type: 3}
   - {fileID: 21300000, guid: 0b7c25ca88696c245953afeb1a7792a8, type: 3}
+  TutorialScript: []
 --- !u!1 &932975938
 GameObject:
   m_ObjectHideFlags: 0
@@ -4006,6 +4007,7 @@ GameObject:
   - component: {fileID: 1907012355}
   - component: {fileID: 1907012357}
   - component: {fileID: 1907012356}
+  - component: {fileID: 1907012358}
   m_Layer: 5
   m_Name: nextBtn
   m_TagString: Untagged
@@ -4071,6 +4073,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1907012354}
   m_CullTransparentMesh: 1
+--- !u!114 &1907012358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1907012354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d79650cfd95c4ed4a8f8cd8509647b3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1940733247
 GameObject:
   m_ObjectHideFlags: 0

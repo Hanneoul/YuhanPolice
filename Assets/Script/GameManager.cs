@@ -102,7 +102,7 @@ public class GameManager : MonoBehaviour
         if (stageClear != null)
         {
             isGameEnd = true;
-            stageClearProgressText.text = int.Parse(gameprogress.ToString()).ToString() + " %";
+            // stageClearProgressText.text = int.Parse(gameprogress.ToString()).ToString() + " %";
             endingImage.sprite = scriptMnager.stageClearImages[StageNum];
             stageClear.SetActive(true);
             // todo 심볼이 3개라면 Ending 오브젝트 활성화 다음으로 클릭 시

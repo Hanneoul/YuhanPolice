@@ -29,10 +29,10 @@ public class ObjectManager : MonoBehaviour
     {
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         // todo 테스트 할때 아래 한줄 주석처리 ㄱ
-        stageNum = 0;
-        if(PlayerPrefs.GetInt("Tutorial") == 1) {
+        // stageNum = 0;
+        // if(PlayerPrefs.GetInt("Tutorial") == 1) {
             stageNum = MainManager._Maininstance.StageNum;
-        }
+        // }
         ReadSpawnFile();
     }
     void ReadSpawnFile()

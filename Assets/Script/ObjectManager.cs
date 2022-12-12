@@ -137,7 +137,7 @@ public class ObjectManager : MonoBehaviour
             }
         }
         else {
-            hurdle.GetComponent<SpriteRenderer>().sprite = scriptMnager.symbolImages[stageNum - 1];
+            hurdle.mainImage = scriptMnager.symbolImages[stageNum - 1];
         }
         
         if(hurdleNum == 3) {
@@ -154,11 +154,13 @@ public class ObjectManager : MonoBehaviour
     }
 
     void Update() {
-        curSpawnDelay += Time.deltaTime;
+        if(!gameManager.isOpening) {
+            curSpawnDelay += Time.deltaTime;
+        }
+        
         if(curSpawnDelay > nextSpwanDelay && !spawnEnd && !gameManager.isEenmy && !gameManager.isOpening) {
             spawn();    
             curSpawnDelay = 0;
         }
-
     }
 }

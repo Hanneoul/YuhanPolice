@@ -29,7 +29,10 @@ public class ObjectManager : MonoBehaviour
     {
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         // todo 테스트 할때 아래 한줄 주석처리 ㄱ
-        stageNum = MainManager._Maininstance.StageNum;
+        stageNum = 0;
+        if(PlayerPrefs.GetInt("Tutorial") == 1) {
+            stageNum = MainManager._Maininstance.StageNum;
+        }
         ReadSpawnFile();
     }
     void ReadSpawnFile()
@@ -129,14 +132,14 @@ public class ObjectManager : MonoBehaviour
         
         if(hurdleNum != 4) {
             hurdle.speed = (int) stages[spawnIndex].speed;
-            if(hurdleNum != 2) {
+            if(hurdleNum != 2 && stageNum != 0) {
                 hurdle.mainImage = scriptMnager.hurdleImages[spriteNum];
             }
-            if(hurdleNum == 3) {
+            if(hurdleNum == 3 && stageNum != 0) {
             hurdle.mainImage = scriptMnager.EnemyImage[spriteNum];
             }
         }
-        else if(hurdleNum == 4 ){
+        else if(hurdleNum == 4 && stageNum != 0){
             hurdle.mainImage = scriptMnager.symbolImages[stageNum - 1];
         }
         

@@ -24,4 +24,6 @@ public class ScriptMnager : MonoBehaviour
     public Sprite[] stageClearImages;
 
     public Sprite[] EnemyImage;
+
+    public List<initList> TutorialScript;
 }

@@ -71,11 +71,13 @@ public class GameManager : MonoBehaviour
     public void EnemyTouchTimeOver() {
         // Enemy Over
         StartCoroutine(creditsOn(credits[4]));
+        AudioManager._Audioinstance.sfxchange(2);
     }
 
     public void EnemyTouch() {
         // Enemy Clear
         StartCoroutine(creditsOn(credits[3]));
+        AudioManager._Audioinstance.sfxchange(3);
     }
 
     IEnumerator creditsOn(GameObject scnces) {
@@ -96,6 +98,7 @@ public class GameManager : MonoBehaviour
         // todo 심볼이 3개라면 Ending 오브젝트 활성화 다음으로 클릭 시
         if (MainManager._Maininstance.symbolSaveData[0] == 1 && MainManager._Maininstance.symbolSaveData[1] == 1 && MainManager._Maininstance.symbolSaveData[2] == 1)
         {
+            AudioManager._Audioinstance.bgmchange(0);
             endingobj.SetActive(true);
         }
     }

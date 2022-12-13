@@ -10,16 +10,17 @@ public class Action : MonoBehaviour
     {
         if (!action)
         {
-            StartCoroutine(ActionCoroutine());         
+            if (upObj != null)
+            {
+                Destroy(upObj);
+            }
+            StartCoroutine(ActionCoroutine());               
         }
     }
     private IEnumerator ActionCoroutine()
     {
         action = true;
-        if (upObj != null)
-        {
-            Destroy(upObj);
-        }
+        
         yield return new WaitForSeconds(1f);
         action = false;
     }

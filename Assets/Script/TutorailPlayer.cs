@@ -31,6 +31,7 @@ public class TutorailPlayer : MonoBehaviour
 
     public void Action()
     {
+        Time.timeScale = 1f;
         animator.SetTrigger("action");
         AudioManager._Audioinstance.sfxchange(0);
     }
@@ -41,6 +42,7 @@ public class TutorailPlayer : MonoBehaviour
     {        
         if (jump == false && jump_Able == true && !gameManager.isDetected)
         {
+            Time.timeScale = 1f;
             jump = true;
             jump_Able = false;
             animator.SetTrigger("jump");

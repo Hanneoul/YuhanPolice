@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class hurdle : MonoBehaviour
 {
     [Header("Kind")]
@@ -11,7 +12,7 @@ public class hurdle : MonoBehaviour
     public bool up_Obj;
     public bool down_Obj;
     public bool isStop;
-
+    
     public Sprite mainImage;
 
     
@@ -44,7 +45,7 @@ public class hurdle : MonoBehaviour
                 gameObject.transform.position = new Vector2(2.1f, transform.position.y);  
             }
         }
-
+        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

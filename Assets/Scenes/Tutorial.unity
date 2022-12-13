@@ -869,6 +869,7 @@ MonoBehaviour:
     - "\uC2E4\uC804\uC5D0\uC11C\uB3C4 \uC5F4\uC2EC\uD788 \uD65C\uC6A9\uD574\uBD10!\""
     - "\" \uD654\uC774\uD305! \uC624\uC815 \uACBD\uCC30\uC11C\uAC00 \uB108\uC5D0\uAC8C
       \uB2EC\uB838\uC5B4!\""
+  backGroundImage: []
 --- !u!1 &607205880
 GameObject:
   m_ObjectHideFlags: 0
@@ -1146,7 +1147,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dab351fff6e363f4b966d22fbf46904f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  credits: []
+  credits:
+  - {fileID: 1822564756}
+  - {fileID: 224512398}
   isEenmy: 0
   isTouch: 0
   isDetected: 0
@@ -2705,6 +2708,7 @@ MonoBehaviour:
   - {fileID: 892769543}
   - {fileID: 14772626}
   hp: 10
+  hpImage: {fileID: 21300000, guid: 6746729a8c384344295d7743db819ad9, type: 3}
 --- !u!1 &1974795978
 GameObject:
   m_ObjectHideFlags: 0

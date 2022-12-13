@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Action : MonoBehaviour
 {
-     bool action;
+    bool action;
     GameObject upObj;
     public void ActionBtn()
     {

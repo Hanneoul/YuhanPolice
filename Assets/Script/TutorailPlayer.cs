@@ -13,6 +13,7 @@ public class TutorailPlayer : MonoBehaviour
     bool jump_Able = true;
     public GameObject[] healthPoint = new GameObject[3];
     public int hp;
+    public Sprite hpImage;
     private void Awake()
     {
         rigidbody = GetComponent<Rigidbody2D>();
@@ -81,7 +82,7 @@ public class TutorailPlayer : MonoBehaviour
         }
         if (hp <= 2)
         {
-            healthPoint[hp].SetActive(false);
+            healthPoint[hp].GetComponent<SpriteRenderer>().sprite =hpImage;
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)

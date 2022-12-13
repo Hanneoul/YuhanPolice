@@ -4,20 +4,21 @@ using UnityEngine;
 
 public class BackGroundManager : MonoBehaviour
 {
-    public GameObject[] BackGround;
-    int i = 0;
+    float speed = 5f;
 
-    private void Update()
+    public float posValue;
+
+    Vector2 startPos;
+    float newPos;
+
+
+    void Start()
     {
-        if (BackGround[i].transform.position.x <= -75f)
-        {
-            BackGround[i].transform.position = new Vector3(45f, 0f, 10f);
-
-            i++;
-        }
-        if (i == 2)
-        {
-            i = 0;
-        }
+        startPos = transform.position;
+    }
+    void Update()
+    {
+        newPos = Mathf.Repeat(Time.time * speed, posValue);
+        transform.position = startPos + Vector2.left * newPos;
     }
 }

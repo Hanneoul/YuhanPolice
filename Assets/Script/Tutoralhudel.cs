@@ -70,7 +70,7 @@ public class Tutoralhudel : MonoBehaviour
         {
             if(collision.CompareTag("Player"))
             {
-                GameManager._instance.isDetected = false;
+                gameManager.isDetected = false;
 
                 //isStop = true;
                 Debug.Log("test");

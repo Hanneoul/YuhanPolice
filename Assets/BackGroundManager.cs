@@ -8,17 +8,18 @@ public class BackGroundManager : MonoBehaviour
 
     public float posValue;
 
-    Vector2 startPos;
+    Vector3 startPos;
     float newPos;
 
 
     void Start()
     {
         startPos = transform.position;
+        startPos.z = 15;
     }
     void Update()
     {
         newPos = Mathf.Repeat(Time.time * speed, posValue);
-        transform.position = startPos + Vector2.left * newPos;
+        transform.position = startPos + Vector3.left * newPos; 
     }
 }

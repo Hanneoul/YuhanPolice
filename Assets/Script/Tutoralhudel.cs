@@ -10,11 +10,12 @@ public class Tutoralhudel : MonoBehaviour
     public bool up_Obj;
     public bool down_Obj;
     public bool isStop;
-
+    bool tutorial;
     public Sprite mainImage;
 
     public TutorialGameManager gameManager;
 
+    static int count;
     
     [Header("Soeed")]
     public int speed;
@@ -27,6 +28,7 @@ public class Tutoralhudel : MonoBehaviour
     {
         gameManager = GameObject.Find("GameManager").GetComponent<TutorialGameManager>();
         this.gameObject.GetComponent<SpriteRenderer>().sprite = mainImage;
+        count++;
     }
         
     void Update()
@@ -46,7 +48,14 @@ public class Tutoralhudel : MonoBehaviour
                 gameObject.transform.position = new Vector2(2.1f, transform.position.y);  
             }
         }
-
+        if (!tutorial && !item && count != 3)
+        {
+            if (gameObject.transform.position.x <= -4f)
+            {
+                Time.timeScale = 0;
+                tutorial = true;
+            }
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -70,7 +79,7 @@ public class Tutoralhudel : MonoBehaviour
         {
             if(collision.CompareTag("Player"))
             {
-                GameManager._instance.isDetected = false;
+                gameManager.isDetected = false;
 
                 //isStop = true;
                 Debug.Log("test");

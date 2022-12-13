@@ -26,4 +26,6 @@ public class ScriptMnager : MonoBehaviour
     public Sprite[] EnemyImage;
 
     public List<initList> TutorialScript;
+
+    public Sprite[] backGroundImage;
 }

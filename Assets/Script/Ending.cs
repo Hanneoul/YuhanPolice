@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Ending : MonoBehaviour
 {
@@ -41,6 +42,8 @@ public class Ending : MonoBehaviour
         }
         yield return new WaitForSeconds(1f);
         GameManager._instance.isOpening = false;
-        this.gameObject.SetActive(false);
+        // this.gameObject.SetActive(false);
+        PlayerPrefs.DeleteAll();
+        SceneManager.LoadScene("StartScene");
     }
 }

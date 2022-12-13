@@ -1,13 +1,12 @@
-using System.Net.Mime;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 using UnityEngine.UI;
 
-public class ObjectManager : MonoBehaviour
+public class TutorailObjectManager : MonoBehaviour
 {
-    public GameManager gameManager;
+    public TutorialGameManager gameManager;
     public ScriptMnager scriptMnager;
     // Stage 별 생성할 Object 배열
     public List<StageObject> stages;
@@ -15,7 +14,6 @@ public class ObjectManager : MonoBehaviour
     public GameObject[] spawnPoints;
     // Prefab 종료
     public GameObject[] PrefabList;
-    public GameObject[] backgrounds;
     // 현재 스폰된 순서
     public int spawnIndex;
     
@@ -28,14 +26,11 @@ public class ObjectManager : MonoBehaviour
 
     void Start()
     {
-        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        gameManager = GameObject.Find("GameManager").GetComponent<TutorialGameManager>();
         // todo 테스트 할때 아래 한줄 주석처리 ㄱ
-        // stageNum = 0;
+        stageNum = 0;
         // if(PlayerPrefs.GetInt("Tutorial") == 1) {
-        stageNum = MainManager._Maininstance.StageNum;
-        for(int i = 0; i< backgrounds.Length; i++) {
-            backgrounds[i].GetComponent<SpriteRenderer>().sprite = scriptMnager.backGroundImage[stageNum -1];
-        }
+            // stageNum = MainManager._Maininstance.StageNum;
         // }
         ReadSpawnFile();
     }
@@ -132,7 +127,7 @@ public class ObjectManager : MonoBehaviour
         Debug.Log(stageNum + " " + " " +hurdleNum+" "+  spriteNum);
         int spawnNum = (int) stages[spawnIndex].pos;
         GameObject spawnObejct = Instantiate(PrefabList[hurdleNum], spawnPoints[spawnNum].transform.position, Quaternion.identity);
-        hurdle hurdle = spawnObejct.GetComponentInChildren<hurdle>();
+        Tutoralhudel hurdle = spawnObejct.GetComponentInChildren<Tutoralhudel>();
         
         if(hurdleNum != 4) {
             hurdle.speed = (int) stages[spawnIndex].speed;
@@ -159,6 +154,7 @@ public class ObjectManager : MonoBehaviour
         nextSpwanDelay = stages[spawnIndex].delay;
 
     }
+
     void Update() {
         if(!gameManager.isOpening) {
             curSpawnDelay += Time.deltaTime;

@@ -1143,31 +1143,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 727795824}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e791f95509420a94f950c5edc4bad692, type: 3}
+  m_Script: {fileID: 11500000, guid: dab351fff6e363f4b966d22fbf46904f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StageNum: 0
-  scriptMnager: {fileID: 0}
-  isOpening: 0
+  credits: []
   isEenmy: 0
   isTouch: 0
   isDetected: 0
-  isTimeout: 0
-  isGameEnd: 0
   isSymbol: 0
-  isSetting: 0
-  stageClear: {fileID: 0}
-  gameprogress: 0
-  stageClearProgressText: {fileID: 0}
-  endingImage: {fileID: 0}
-  endingobj: {fileID: 0}
-  credits:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 1822564756}
-  - {fileID: 224512398}
-  openigObj: {fileID: 0}
+  isTimeout: 0
+  isOpening: 0
 --- !u!1 &732685034
 GameObject:
   m_ObjectHideFlags: 0
@@ -2030,8 +2015,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1929974977}
-        m_TargetAssemblyTypeName: PlayerCtr, Assembly-CSharp
+      - m_Target: {fileID: 1929974981}
+        m_TargetAssemblyTypeName: TutorailPlayer, Assembly-CSharp
         m_MethodName: Jump
         m_Mode: 1
         m_Arguments:
@@ -2121,10 +2106,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1595256188}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d483f2224775a9418e72503cef18bb4, type: 3}
+  m_Script: {fileID: 11500000, guid: 948cb29089cbf564fae577d7e94c7754, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameManager: {fileID: 727795826}
+  gameManager: {fileID: 0}
   scriptMnager: {fileID: 538561905}
   spawnPoints:
   - {fileID: 1311126574}
@@ -2362,7 +2347,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1863211809}
-  - component: {fileID: 1863211808}
+  - component: {fileID: 1863211810}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -2370,19 +2355,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1863211808
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1863211807}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 159955a4fa8546641b38f14420a24034, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 5
 --- !u!4 &1863211809
 Transform:
   m_ObjectHideFlags: 0
@@ -2400,6 +2372,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1863211810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1863211807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12b9336084ac0474db449afb037467bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0
+  tutorialGameManager: {fileID: 0}
 --- !u!1 &1871489079
 GameObject:
   m_ObjectHideFlags: 0
@@ -2483,8 +2469,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1929974977}
-        m_TargetAssemblyTypeName: PlayerCtr, Assembly-CSharp
+      - m_Target: {fileID: 1929974981}
+        m_TargetAssemblyTypeName: TutorailPlayer, Assembly-CSharp
         m_MethodName: Action
         m_Mode: 1
         m_Arguments:
@@ -2557,8 +2543,8 @@ GameObject:
   - component: {fileID: 1929974980}
   - component: {fileID: 1929974979}
   - component: {fileID: 1929974978}
-  - component: {fileID: 1929974977}
   - component: {fileID: 1929974976}
+  - component: {fileID: 1929974981}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -2601,24 +2587,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1929974977
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1929974974}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dea897e9cef1610408a09c8a86dcaad6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  jumpSpeed: 5
-  healthPoint:
-  - {fileID: 1974795978}
-  - {fileID: 892769543}
-  - {fileID: 14772626}
-  hp: 20
 --- !u!61 &1929974978
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2718,6 +2686,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1929974981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1929974974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d90a48549c1e64b40bd6319a8946713e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameManager: {fileID: 0}
+  jumpSpeed: 5
+  healthPoint:
+  - {fileID: 1974795978}
+  - {fileID: 892769543}
+  - {fileID: 14772626}
+  hp: 10
 --- !u!1 &1974795978
 GameObject:
   m_ObjectHideFlags: 0

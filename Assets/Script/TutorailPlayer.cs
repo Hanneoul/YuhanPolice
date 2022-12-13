@@ -2,23 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerCtr : MonoBehaviour
+public class TutorailPlayer : MonoBehaviour
 {
-    [Header("Player JumpSpedd")]
+   [Header("Player JumpSpedd")]
+    public TutorialGameManager gameManager;
     public float jumpSpeed;
     Animator animator;
     Rigidbody2D rigidbody;
     bool jump;
     bool jump_Able = true;
     public GameObject[] healthPoint = new GameObject[3];
-    public Sprite hpImage;
-
-    public GameObject gameOverObj;
     public int hp;
     private void Awake()
     {
         rigidbody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+    }
+    void Start()
+    {
+        gameManager = GameObject.Find("GameManager").GetComponent<TutorialGameManager>();
     }
     void Update()
     {
@@ -36,7 +38,7 @@ public class PlayerCtr : MonoBehaviour
     // Player Jump
     public void Jump()
     {        
-        if (jump == false && jump_Able == true && !GameManager._instance.isDetected)
+        if (jump == false && jump_Able == true && !gameManager.isDetected)
         {
             jump = true;
             jump_Able = false;
@@ -76,12 +78,10 @@ public class PlayerCtr : MonoBehaviour
         {
             gameObject.SetActive(false);
             Time.timeScale = 0f;
-            // GameOver 출력
-            gameOverObj.SetActive(true);
         }
         if (hp <= 2)
         {
-            healthPoint[hp].GetComponent<SpriteRenderer>().sprite = hpImage;
+            healthPoint[hp].SetActive(false);
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -91,5 +91,4 @@ public class PlayerCtr : MonoBehaviour
             hp--;
         }
     }
-
 }

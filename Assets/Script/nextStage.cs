@@ -6,9 +6,17 @@ using UnityEngine.SceneManagement;
 
 public class nextStage : MonoBehaviour, IPointerClickHandler
 {
-    
+    public GameObject endingObj;
     public void OnPointerClick(PointerEventData eventData)
     {
-        SceneManager.LoadScene("MainScene");
+        if(PlayerPrefs.GetInt("symbol1") == 1 && PlayerPrefs.GetInt("symbol2") == 1 && PlayerPrefs.GetInt("symbol3") == 1)
+        {
+            endingObj.SetActive(true);
+        }
+        else {
+            SceneManager.LoadScene("MainScene");
+        }
+        
+        
     }
 }

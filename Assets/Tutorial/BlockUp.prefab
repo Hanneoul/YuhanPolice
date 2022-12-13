@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 3607606651897636131}
   - component: {fileID: 3607606651897636142}
   - component: {fileID: 3607606651897636129}
-  - component: {fileID: 3607606651897636128}
+  - component: {fileID: 889951420057215502}
   m_Layer: 0
   m_Name: game_block_up_1
   m_TagString: UpObj
@@ -144,7 +144,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3, y: 6}
   m_EdgeRadius: 0
---- !u!114 &3607606651897636128
+--- !u!114 &889951420057215502
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -153,7 +153,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3607606651897636130}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb5066f0fb5d4934e9422e1f39e67b35, type: 3}
+  m_Script: {fileID: 11500000, guid: 253a3dc8656a9384abdfbee4d78a52e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   item: 0
@@ -162,5 +162,6 @@ MonoBehaviour:
   down_Obj: 0
   isStop: 0
   mainImage: {fileID: 21300000, guid: 8075eb999fe596343885f801a0aac2b3, type: 3}
+  gameManager: {fileID: 0}
   speed: 0
   touch: {fileID: 8406562480971363535, guid: b1536fb750dcace4580d2d7592ae6ca8, type: 3}

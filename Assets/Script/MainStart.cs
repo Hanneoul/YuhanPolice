@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class MainStart : MonoBehaviour, IPointerClickHandler
 {
     public bool firstPlay;
-
+    
     public void OnPointerClick(PointerEventData eventData)
     {
         Debug.Log("Touch");

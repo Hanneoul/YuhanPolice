@@ -13,5 +13,6 @@ public class GameStartBtn : MonoBehaviour, IPointerClickHandler
         MainManager._Maininstance.StageNum = stageNum;
         SceneManager.LoadScene("SystemScene");
         AudioManager._Audioinstance.bgmchange(1);
+        Time.timeScale = 1;
     }
 }

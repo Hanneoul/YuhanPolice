@@ -17,7 +17,7 @@ public class tutorialType : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(Typing(openingText,scriptMnager.TutorialScript[0].Strings, 0.1f));
+        StartCoroutine(Typing(openingText, scriptMnager.TutorialScript[0].Strings, 0.1f));
     }
 
     // Update is called once per frame

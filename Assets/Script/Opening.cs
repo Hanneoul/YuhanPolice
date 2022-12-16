@@ -9,7 +9,7 @@ public class Opening : MonoBehaviour
     public TextMeshProUGUI openingText;
     public ScriptMnager scriptMnager;
     public Image openingImage;
-
+    public TutorialGameManager gameManager;
     void Awake()
     {
         
@@ -18,9 +18,8 @@ public class Opening : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        int ram = Random.Range(0,4);
-        openingImage.sprite = scriptMnager.openingImages[ram];
-        StartCoroutine(Typing(openingText,scriptMnager.openingScript[ram].Strings, 0.1f));
+        gameManager = GameObject.Find("GameManager").GetComponent<TutorialGameManager>();
+        StartCoroutine(Typing(openingText, 0.1f));
     }
 
     // Update is called once per frame
@@ -29,18 +28,24 @@ public class Opening : MonoBehaviour
         
     }
 
-    IEnumerator Typing(TextMeshProUGUI typingText, string[] messages, float speed) 
+    IEnumerator Typing(TextMeshProUGUI typingText, float speed) 
     { 
-        foreach(string message in messages) {
-            for (int i = 0; i < message.Length; i++) 
-            { 
-                typingText.text = message.Substring(0, i + 1); 
-                yield return new WaitForSeconds(speed);
-            }
+        for(int x = 0; x < 4; x++) {
+            string[] messages =  scriptMnager.openingScript[x].Strings;
+            openingImage.sprite = scriptMnager.openingImages[x];
+            foreach(string message in messages) {
+                for (int i = 0; i < message.Length; i++) 
+                { 
+                    typingText.text = message.Substring(0, i + 1); 
+                    yield return new WaitForSeconds(speed);
+                }
             yield return new WaitForSeconds(1F);
+            }
         }
+        
         yield return new WaitForSeconds(1f);
-        GameManager._instance.isOpening = false;
+        gameManager.isOpening = false;
+        gameManager.typeObj.SetActive(true);
         this.gameObject.SetActive(false);
     } 
 }

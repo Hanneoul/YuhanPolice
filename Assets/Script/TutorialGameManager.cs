@@ -12,10 +12,14 @@ public class TutorialGameManager : MonoBehaviour
     public bool isSymbol;
     public bool isTimeout;
     public bool isOpening;
+    public GameObject opeingobj;
+    public GameObject typeObj;
     // Start is called before the first frame update
     void Start()
     {
-        
+        isOpening = true;
+        opeingobj.SetActive(true);
+        typeObj.SetActive(false);
     }
 
     // Update is called once per frame
@@ -24,7 +28,7 @@ public class TutorialGameManager : MonoBehaviour
         
     }
 
-     public void EnemyTouchTimeOver() {
+    public void EnemyTouchTimeOver() {
         
         // Enemy Over
         StartCoroutine(creditsOn(credits[1]));

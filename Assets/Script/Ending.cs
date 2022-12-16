@@ -11,35 +11,26 @@ public class Ending : MonoBehaviour
     public ScriptMnager scriptMnager;
     public Image endingImage;
 
-    void Awake()
-    {
-        
-    }
-
-    // Start is called before the first frame update
     void Start()
     {
-        int ram = Random.Range(0,3);
-        endingImage.sprite = scriptMnager.endingImages[ram];
-        StartCoroutine(Typing(openingText,scriptMnager.endingScript[ram].Strings, 0.1f));
+        StartCoroutine(Typing(openingText, 0.1f));
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    IEnumerator Typing(TextMeshProUGUI typingText, string[] messages, float speed) 
+    IEnumerator Typing(TextMeshProUGUI typingText,float speed) 
     { 
-        foreach(string message in messages) {
-            for (int i = 0; i < message.Length; i++) 
-            { 
-                typingText.text = message.Substring(0, i + 1); 
-                yield return new WaitForSeconds(speed);
+        for(int i=0; i< 4; i++) {
+            string[] messages = scriptMnager.endingScript[i].Strings;
+            endingImage.sprite = scriptMnager.endingImages[i];
+            foreach(string message in messages) {
+                for (int x = 0; x < message.Length; x++) 
+                { 
+                    typingText.text = message.Substring(0, i + 1); 
+                    yield return new WaitForSeconds(speed);
+                }
+                yield return new WaitForSeconds(1F);
             }
-            yield return new WaitForSeconds(1F);
         }
+        
         yield return new WaitForSeconds(1f);
         GameManager._instance.isOpening = false;
         // this.gameObject.SetActive(false);

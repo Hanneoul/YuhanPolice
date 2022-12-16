@@ -33,7 +33,6 @@ public class GameManager : MonoBehaviour
     [Header("GameEnding")]
     public GameObject endingobj;
     public GameObject[] credits;
-    public GameObject openigObj;
     public static GameManager Instance
     {
         get
@@ -63,13 +62,10 @@ public class GameManager : MonoBehaviour
     }
     void Start()
     {
-        if (openigObj != null)
-        {
         isOpening = true;
-        openigObj.SetActive(true);
         // todo 테스트 할때 아래 한줄 주석처리 ㄱ
         StageNum = MainManager._Maininstance.StageNum;
-        }
+        isOpening = false;
     }
 
     public void EnemyTouchTimeOver() {

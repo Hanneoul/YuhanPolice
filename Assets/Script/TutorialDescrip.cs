@@ -23,7 +23,7 @@ public class TutorialDescrip : MonoBehaviour
         else if(tutorialGameManager.isTouch)
         {
             transform.Translate(new Vector2(-speed * Time.deltaTime, 0f));
-            if (gameObject.transform.position.x <= -7f)
+            if (gameObject.transform.position.x <= 57f)
             {
                 tutorialGameManager.isTouch = false;
             }

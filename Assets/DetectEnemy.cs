@@ -17,7 +17,7 @@ public class DetectEnemy : MonoBehaviour
         else if(GameManager._instance.isTouch)
         {
             transform.Translate(new Vector2(-speed * Time.deltaTime, 0f));
-            if (gameObject.transform.position.x <= -7f)
+            if (gameObject.transform.position.x <= -6f)
             {
                 GameManager._instance.isTouch = false;
             }

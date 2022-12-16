@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
     public bool isGameEnd;
     public bool isSymbol;
     public bool isSetting;
+    public bool punching;
 
     float times;
 

@@ -12,6 +12,7 @@ public class TutorialGameManager : MonoBehaviour
     public bool isSymbol;
     public bool isTimeout;
     public bool isOpening;
+    public static bool punching;
     // Start is called before the first frame update
     void Start()
     {

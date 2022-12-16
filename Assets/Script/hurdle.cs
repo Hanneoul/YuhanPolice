@@ -12,20 +12,21 @@ public class hurdle : MonoBehaviour
     public bool up_Obj;
     public bool down_Obj;
     public bool isStop;
-    
+    public bool punching;
     public Sprite mainImage;
 
-    
-    [Header("Soeed")]
+    int rotate;
+    BoxCollider2D boxCollider;
+
+    [Header("Speed")]
     public int speed;
     
     public GameObject touch;
 
-
-    
     void Start()
     {
         this.gameObject.GetComponent<SpriteRenderer>().sprite = mainImage;
+        boxCollider = GetComponent<BoxCollider2D>();
     }
         
     void Update()
@@ -45,7 +46,22 @@ public class hurdle : MonoBehaviour
                 gameObject.transform.position = new Vector2(2.1f, transform.position.y);  
             }
         }
-        
+
+        if (punching)
+        {
+            rotate += 2;
+            this.transform.position = new Vector3(gameObject.transform.position.x, rotate * 5 * Time.deltaTime);
+            this.transform.localRotation = Quaternion.Euler(0, 0, rotate * 5);
+            boxCollider.enabled = false;
+            if (transform.position.y > 10f)
+            {                
+                Destroy(this.gameObject);
+            }
+        }
+        else
+        {
+            rotate = 0;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

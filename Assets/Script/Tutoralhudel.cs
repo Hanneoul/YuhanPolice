@@ -21,12 +21,13 @@ public class Tutoralhudel : MonoBehaviour
     public int speed;
     
     public GameObject touch;
-
-
+    BoxCollider2D boxCollider;
+    int rotate;
     
     void Start()
     {
         gameManager = GameObject.Find("GameManager").GetComponent<TutorialGameManager>();
+        boxCollider = GetComponent<BoxCollider2D>();
         this.gameObject.GetComponent<SpriteRenderer>().sprite = mainImage;
         count++;
     }
@@ -55,6 +56,23 @@ public class Tutoralhudel : MonoBehaviour
                 Time.timeScale = 0;
                 tutorial = true;
             }
+        }
+
+        if (TutorialGameManager.punching)
+        {
+            rotate += 2;
+            this.transform.position = new Vector3(gameObject.transform.position.x, rotate*5*Time.deltaTime);
+            this.transform.localRotation = Quaternion.Euler(0, 0, rotate * 5);
+            boxCollider.enabled = false;
+            if (transform.position.y > 10f)
+            {
+                TutorialGameManager.punching = false;
+                Destroy(this.gameObject);
+            }
+        }
+        else
+        {
+            rotate = 0;            
         }
     }
 

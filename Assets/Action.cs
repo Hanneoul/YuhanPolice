@@ -6,14 +6,12 @@ public class Action : MonoBehaviour
 {
     bool action;
     GameObject upObj;
+    hurdle hurdle;
+    
     public void ActionBtn()
     {
         if (!action)
-        {
-            if (upObj != null)
-            {
-                Destroy(upObj);
-            }
+        {            
             StartCoroutine(ActionCoroutine());               
         }
     }
@@ -21,7 +19,17 @@ public class Action : MonoBehaviour
     {
         action = true;
         
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
+        if (upObj != null)
+        {
+            TutorialGameManager.punching = true;
+            Debug.Log(upObj);
+
+        }
+        if (hurdle != null)
+        {
+            hurdle.punching = true;
+        }
         action = false;
     }
     
@@ -30,6 +38,7 @@ public class Action : MonoBehaviour
         if (collision.CompareTag("UpObj"))
         {
             upObj = collision.gameObject;
+            hurdle = upObj.GetComponent<hurdle>();
             Debug.Log(upObj);
         }
     }
@@ -37,7 +46,9 @@ public class Action : MonoBehaviour
     {
         if (collision.CompareTag("UpObj"))
         {
-            upObj = null;            
+            upObj = null;
+
+            Debug.Log("Exit");
         }
     }
 }

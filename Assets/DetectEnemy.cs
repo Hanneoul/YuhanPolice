@@ -14,12 +14,13 @@ public class DetectEnemy : MonoBehaviour
             transform.Translate(new Vector2(speed * Time.deltaTime, 0f));
 
         }
-        else if(GameManager._instance.isTouch)
+        else if(GameManager._instance.isTouch || GameManager._instance.isTouchFailed)
         {
             transform.Translate(new Vector2(-speed * Time.deltaTime, 0f));
-            if (gameObject.transform.position.x <= -6f)
+            if (gameObject.transform.position.x <= 1f)
             {
                 GameManager._instance.isTouch = false;
+                GameManager._instance.isTouchFailed = false;
             }
         }
     }

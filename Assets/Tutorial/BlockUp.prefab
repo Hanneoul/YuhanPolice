@@ -164,4 +164,4 @@ MonoBehaviour:
   mainImage: {fileID: 21300000, guid: 8075eb999fe596343885f801a0aac2b3, type: 3}
   gameManager: {fileID: 0}
   speed: 0
-  touch: {fileID: 8406562480971363535, guid: b1536fb750dcace4580d2d7592ae6ca8, type: 3}
+  touch: {fileID: 4243838248263496358, guid: 3a01ac5b36b59e7439eb71b37999ebf2, type: 3}

@@ -18,7 +18,5 @@ public class MainStart : MonoBehaviour, IPointerClickHandler
         else {
             SceneManager.LoadScene("MainScene");
         }
-        
-
     }
 }

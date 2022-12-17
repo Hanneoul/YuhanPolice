@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     // 범인 등장
     public bool isEenmy;
     public bool isTouch;
+    public bool isTouchFailed;
     public bool isDetected;
     public bool isTimeout;
     public bool isGameEnd;

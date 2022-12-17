@@ -1227,6 +1227,7 @@ MonoBehaviour:
   openingText: {fileID: 836080762}
   scriptMnager: {fileID: 896723278}
   openingImage: {fileID: 363905334}
+  gameManager: {fileID: 0}
 --- !u!1 &836080760
 GameObject:
   m_ObjectHideFlags: 0
@@ -1396,11 +1397,13 @@ MonoBehaviour:
   isOpening: 0
   isEenmy: 0
   isTouch: 0
+  isTouchFailed: 0
   isDetected: 0
   isTimeout: 0
   isGameEnd: 0
   isSymbol: 0
   isSetting: 0
+  punching: 0
   stageClear: {fileID: 1290469263}
   gameprogress: 0
   stageClearProgressText: {fileID: 1686343791}
@@ -1412,7 +1415,6 @@ MonoBehaviour:
   - {fileID: 1895579789}
   - {fileID: 312415249}
   - {fileID: 320485497}
-  openigObj: {fileID: 828086495}
 --- !u!4 &861740605
 Transform:
   m_ObjectHideFlags: 0
@@ -3731,7 +3733,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1702550196}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.94, y: -1.44, z: 0}
+  m_LocalPosition: {x: -8, y: -1.44, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4306,7 +4308,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2092286712}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.86, y: 0.79, z: -1}
+  m_LocalPosition: {x: 1, y: 0.79, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

@@ -19,7 +19,18 @@ public class BackGroundManager : MonoBehaviour
     }
     void Update()
     {
-        newPos = Mathf.Repeat(Time.time * speed, posValue);
-        transform.position = startPos + Vector3.left * newPos; 
+        if(GameManager._instance != null)
+        {
+            if (!GameManager._instance.isDead)
+            {
+                newPos = Mathf.Repeat(Time.time * speed, posValue);
+               transform.position = startPos + Vector3.left * newPos;
+            }
+        }
+        else
+        {
+            newPos = Mathf.Repeat(Time.time * speed, posValue);
+            transform.position = startPos + Vector3.left * newPos;
+        }
     }
 }

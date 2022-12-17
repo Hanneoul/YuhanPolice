@@ -31,7 +31,7 @@ public class hurdle : MonoBehaviour
         
     void Update()
     {
-        if(!isStop && !GameManager._instance.isOpening) {
+        if(!isStop && !GameManager._instance.isOpening && !GameManager._instance.isDead) {
             this.gameObject.transform.Translate(Vector2.left * speed * Time.deltaTime);
         }
         if(GameManager._instance.isTouch || GameManager._instance.isTimeout ) {

@@ -23,7 +23,7 @@ public class PlayerCtr : MonoBehaviour
     void Update()
     {
         JumpCheck();
-        HP_Checker();        
+        HP_Checker();
     }
 
     public void Action()
@@ -56,7 +56,7 @@ public class PlayerCtr : MonoBehaviour
         
         if (jump && jump_Able == false)
         {
-            rigidbody.velocity = jumpVector;            
+            rigidbody.velocity = jumpVector;
         }
         else if (jump == false && this.gameObject.transform.position.y >= 3f)
         {
@@ -74,22 +74,37 @@ public class PlayerCtr : MonoBehaviour
     {
         if (hp <= 0)
         {
-            gameObject.SetActive(false);
-            Time.timeScale = 0f;
-            // GameOver 출력
-            gameOverObj.SetActive(true);
+            StartCoroutine(Dead());
         }
         if (hp <= 2)
         {
             healthPoint[hp].GetComponent<SpriteRenderer>().sprite = hpImage;
-        }
+        }        
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("block") || collision.CompareTag("UpObj"))
+        if (collision.CompareTag("block"))
         {
+            animator.SetTrigger("hurt_b");
             hp--;
         }
+        else if (collision.CompareTag("UpObj"))
+        {
+            animator.SetTrigger("hurt_u");
+            hp--;
+        }        
     }
+    IEnumerator Dead()
+    {
+        animator.SetTrigger("dead");
+        GameManager._instance.isDead = true;
+        rigidbody.velocity = new Vector2(0, 7f);
+        yield return new WaitForSeconds(0.5f);
+        rigidbody.velocity = new Vector2(0, -10f);
+        yield return new WaitForSeconds(0.5f);
+        Time.timeScale = 0;
+        gameOverObj.SetActive(true);
 
+        Destroy(gameObject);
+    }
 }

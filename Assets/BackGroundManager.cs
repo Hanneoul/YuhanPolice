@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class BackGroundManager : MonoBehaviour
 {
-    float speed = 5f;
+    public float speed = 5f;
 
     public float posValue;
+    public bool isStop;
 
     Vector3 startPos;
-    float newPos;
+    public float newPos;
+
+    public float times;
 
 
     void Start()
@@ -21,15 +24,17 @@ public class BackGroundManager : MonoBehaviour
     {
         if(GameManager._instance != null)
         {
-            if (!GameManager._instance.isDead)
+            if (!GameManager._instance.isDead && isStop == false)
             {
-                newPos = Mathf.Repeat(Time.time * speed, posValue);
-               transform.position = startPos + Vector3.left * newPos;
+                times = Time.time;
+                newPos = Mathf.Repeat(Time.deltaTime * speed, posValue);
+                transform.position = startPos + Vector3.left * newPos;
             }
         }
-        else
+        else if(isStop == false)
         {
-            newPos = Mathf.Repeat(Time.time * speed, posValue);
+            times = Time.time;
+            newPos = Mathf.Repeat(Time.deltaTime  * speed, posValue);
             transform.position = startPos + Vector3.left * newPos;
         }
     }

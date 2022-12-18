@@ -28,4 +28,5 @@ public class ScriptMnager : MonoBehaviour
     public List<initList> TutorialScript;
 
     public Sprite[] backGroundImage;
+    public Material[] backGroundMeterials;
 }

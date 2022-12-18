@@ -15,6 +15,11 @@ public class PlayerCtr : MonoBehaviour
 
     public GameObject gameOverObj;
     public int hp;
+    public BackGroundQuad backGroundManager;
+    void Start()
+    {
+        backGroundManager = GameObject.Find("BackGroundQuad").GetComponent<BackGroundQuad>();
+    }
     private void Awake()
     {
         rigidbody = GetComponent<Rigidbody2D>();
@@ -86,6 +91,8 @@ public class PlayerCtr : MonoBehaviour
         if (collision.CompareTag("block"))
         {
             animator.SetTrigger("hurt_b");
+            GameManager._instance.isOpening = true;
+            backGroundManager.speed = 0;
             hp--;
         }
         else if (collision.CompareTag("UpObj"))
@@ -106,5 +113,10 @@ public class PlayerCtr : MonoBehaviour
         gameOverObj.SetActive(true);
 
         Destroy(gameObject);
+    }
+
+    public void isOpeningfalse() {
+        GameManager._instance.isOpening = false;
+        backGroundManager.speed = 0.15f;
     }
 }

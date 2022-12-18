@@ -16,6 +16,7 @@ public class ObjectManager : MonoBehaviour
     // Prefab 종료
     public GameObject[] PrefabList;
     public GameObject[] backgrounds;
+    public GameObject BackGroundquad;
     // 현재 스폰된 순서
     public int spawnIndex;
     
@@ -33,9 +34,10 @@ public class ObjectManager : MonoBehaviour
         // stageNum = 0;
         // if(PlayerPrefs.GetInt("Tutorial") == 1) {
         stageNum = MainManager._Maininstance.StageNum;
-        for(int i = 0; i< backgrounds.Length; i++) {
-            backgrounds[i].GetComponent<SpriteRenderer>().sprite = scriptMnager.backGroundImage[stageNum -1];
-        }
+        // for(int i = 0; i< backgrounds.Length; i++) {
+        //     backgrounds[i].GetComponent<SpriteRenderer>().sprite = scriptMnager.backGroundImage[stageNum -1];
+        // }
+        BackGroundquad.GetComponent<MeshRenderer>().material = scriptMnager.backGroundMeterials[stageNum - 1];
         // }
         ReadSpawnFile();
     }

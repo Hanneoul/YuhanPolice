@@ -11,7 +11,8 @@ public class MainStart : MonoBehaviour, IPointerClickHandler
     public void OnPointerClick(PointerEventData eventData)
     {
         Debug.Log("Touch");
-
+        // 튜토리얼 스킵
+        // PlayerPrefs.SetInt("Tutorial" , 1);
         if(PlayerPrefs.GetInt("Tutorial") == 0) {
             SceneManager.LoadScene("Tutorial");
         }

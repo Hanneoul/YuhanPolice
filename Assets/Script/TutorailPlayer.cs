@@ -108,6 +108,6 @@ public class TutorailPlayer : MonoBehaviour
     public void isOpeningfalse() 
     {
         gameManager.isOpening = false;
-        backGroundManager.speed = 0.15f;
+        backGroundManager.speed = 3f;
     }
 }

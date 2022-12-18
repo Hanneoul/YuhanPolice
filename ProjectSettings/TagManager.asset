@@ -12,6 +12,7 @@ TagManager:
   - UpObj
   - Delete
   - Symbol
+  - Detect
   layers:
   - Default
   - TransparentFX

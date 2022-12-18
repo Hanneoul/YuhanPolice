@@ -14,6 +14,8 @@ public class TutorailPlayer : MonoBehaviour
     public GameObject[] healthPoint = new GameObject[3];
     public int hp;
     public Sprite hpImage;
+    public BackGroundManager backGroundManager;
+
     private void Awake()
     {
         rigidbody = GetComponent<Rigidbody2D>();
@@ -53,7 +55,7 @@ public class TutorailPlayer : MonoBehaviour
     // Jump Check
     void JumpCheck()
     {
-        if (this.gameObject.transform.position.y >= 0f)
+        if (this.gameObject.transform.position.y >= 2f)
         {
             jump = false;
             jump_Able = true;
@@ -61,7 +63,7 @@ public class TutorailPlayer : MonoBehaviour
         
         if (jump && jump_Able == false)
         {
-            rigidbody.velocity = jumpVector;            
+            rigidbody.velocity = jumpVector;
         }
         else if (jump == false && this.gameObject.transform.position.y >= 3f)
         {
@@ -89,9 +91,23 @@ public class TutorailPlayer : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("block") || collision.CompareTag("UpObj"))
+        if (collision.CompareTag("block"))
         {
             hp--;
         }
+
+        if (collision.CompareTag("UpObj"))
+        {
+            animator.SetTrigger("hurt_u");
+            gameManager.isOpening = true;
+            backGroundManager.speed = 0;
+            hp--;
+        }
+    }
+
+    public void isOpeningfalse() 
+    {
+        gameManager.isOpening = false;
+        backGroundManager.speed = 0.15f;
     }
 }

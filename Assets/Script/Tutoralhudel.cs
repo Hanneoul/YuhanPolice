@@ -85,6 +85,12 @@ public class Tutoralhudel : MonoBehaviour
             Invoke("deleteObject", 10f);
         }
 
+        if (collision.CompareTag("Detect"))
+        {
+            if(count < 3)
+            Time.timeScale = 0;
+        }
+
         if (item)
         {
             if(collision.CompareTag("Player"))
@@ -105,8 +111,7 @@ public class Tutoralhudel : MonoBehaviour
                                     + new Vector3(Random.Range(-200,-150),0,0), 
                                         Quaternion.identity, 
                                         GameObject.Find("Canvas").transform);
-                Time.timeScale = 0;
-                
+                Time.timeScale = 0;                
             }
         }
 

@@ -13,6 +13,7 @@ public class PlayerCtr : MonoBehaviour
     public GameObject[] healthPoint = new GameObject[3];
     public Sprite hpImage;
 
+    public GameObject ground;
     public GameObject gameOverObj;
     public int hp;
     public BackGroundQuad backGroundManager;
@@ -107,10 +108,11 @@ public class PlayerCtr : MonoBehaviour
     {
         animator.SetTrigger("dead");
         GameManager._instance.isDead = true;
-        rigidbody.velocity = new Vector2(0, 7f);
-        yield return new WaitForSeconds(0.5f);
-        rigidbody.velocity = new Vector2(0, -10f);
-        yield return new WaitForSeconds(0.5f);
+        ground.SetActive(false);
+        //rigidbody.velocity = new Vector2(0, 7f);
+        yield return new WaitForSeconds(0.2f);
+        //rigidbody.velocity = new Vector2(0, -10f);
+        yield return new WaitForSeconds(0.2f);
         Time.timeScale = 0;
         gameOverObj.SetActive(true);
 

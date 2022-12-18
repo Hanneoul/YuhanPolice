@@ -73,6 +73,11 @@ public class hurdle : MonoBehaviour
             Invoke("deleteObject", 10f);
         }
 
+        if (collision.CompareTag("Detect"))
+        {
+
+        }
+
         if (item)
         {
             if(collision.CompareTag("Player"))

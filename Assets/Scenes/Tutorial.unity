@@ -1227,6 +1227,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 9ef6848eef1cb9f40b1eb9e5f03ec2d2, type: 3}
   - {fileID: 21300000, guid: 3901bce51b90101478d3af961e34615d, type: 3}
   - {fileID: 21300000, guid: 294ba7720a79d434d9bb8bae9a71609a, type: 3}
+  backGroundMeterials: []
 --- !u!1 &607205880
 GameObject:
   m_ObjectHideFlags: 0
@@ -1461,7 +1462,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37d22f735faedba4b99f364b176d213b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 5
   posValue: 19.2
+  isStop: 0
+  newPos: 0
+  times: 0
 --- !u!1 &727795824
 GameObject:
   m_ObjectHideFlags: 0
@@ -2538,7 +2543,7 @@ GameObject:
   - component: {fileID: 1843265309}
   m_Layer: 0
   m_Name: DetectTop
-  m_TagString: Untagged
+  m_TagString: Detect
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2551,7 +2556,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1843265307}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.88, y: -1.6, z: 0}
+  m_LocalPosition: {x: -1.88, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 0.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2985,6 +2990,7 @@ MonoBehaviour:
   - {fileID: 14772626}
   hp: 4
   hpImage: {fileID: 21300000, guid: 6746729a8c384344295d7743db819ad9, type: 3}
+  backGroundManager: {fileID: 644000850}
 --- !u!1 &1974795978
 GameObject:
   m_ObjectHideFlags: 0

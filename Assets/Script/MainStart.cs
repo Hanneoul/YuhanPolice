@@ -12,7 +12,7 @@ public class MainStart : MonoBehaviour, IPointerClickHandler
     {
         Debug.Log("Touch");
         // 튜토리얼 스킵
-        PlayerPrefs.DeleteAll();
+        //PlayerPrefs.DeleteAll();
         // PlayerPrefs.SetInt("Tutorial" , 1);
         if(PlayerPrefs.GetInt("Tutorial") == 0) {
             SceneManager.LoadScene("Tutorial");

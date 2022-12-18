@@ -11,6 +11,7 @@ public class nextStage : MonoBehaviour, IPointerClickHandler
     {
         if(PlayerPrefs.GetInt("symbol1") == 1 && PlayerPrefs.GetInt("symbol2") == 1 && PlayerPrefs.GetInt("symbol3") == 1)
         {
+            Time.timeScale = 1;
             endingObj.SetActive(true);
         }
         else {

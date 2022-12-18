@@ -24,7 +24,7 @@ public class Ending : MonoBehaviour
             foreach(string message in messages) {
                 for (int x = 0; x < message.Length; x++) 
                 { 
-                    typingText.text = message.Substring(0, i + 1); 
+                    typingText.text = message.Substring(0, x + 1); 
                     yield return new WaitForSeconds(speed);
                 }
                 yield return new WaitForSeconds(1F);

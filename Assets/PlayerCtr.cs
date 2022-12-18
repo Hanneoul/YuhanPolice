@@ -98,6 +98,8 @@ public class PlayerCtr : MonoBehaviour
         else if (collision.CompareTag("UpObj"))
         {
             animator.SetTrigger("hurt_u");
+            GameManager._instance.isOpening = true;
+            backGroundManager.speed = 0;
             hp--;
         }        
     }

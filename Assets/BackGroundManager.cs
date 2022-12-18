@@ -24,17 +24,17 @@ public class BackGroundManager : MonoBehaviour
     {
         if(GameManager._instance != null)
         {
-            if (!GameManager._instance.isDead && isStop == false)
+            if (!GameManager._instance.isDead)
             {
                 times = Time.time;
-                newPos = Mathf.Repeat(Time.deltaTime * speed, posValue);
+                newPos = Mathf.Repeat(times * speed, posValue);
                 transform.position = startPos + Vector3.left * newPos;
             }
         }
-        else if(isStop == false)
+        else
         {
             times = Time.time;
-            newPos = Mathf.Repeat(Time.deltaTime  * speed, posValue);
+            newPos = Mathf.Repeat(times * speed, posValue);
             transform.position = startPos + Vector3.left * newPos;
         }
     }
